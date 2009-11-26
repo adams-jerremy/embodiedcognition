@@ -8,11 +8,12 @@ import java.util.Random;
 import java.util.Set;
 
 
-public class FSM<A>{
+public class FSM<A> implements Cloneable{
 	protected Map<A,Integer>[] transitions;
 	protected boolean[] accept;
 	protected int current = 0;
 	protected ListSet<A> alphabet = new ListSet<A>();
+	protected double fitness;
 	
 	public FSM(int numStates){
 		transitions = new HashMap[numStates];
@@ -60,6 +61,18 @@ public class FSM<A>{
 		}
 		return true;
 	}
+	public double evaluate(Map<List<A>,Boolean> labelled){
+		double total = 0;
+		for(List<A> l : labelled.keySet()) total+=(offer(l)!=labelled.get(l))?1:0;
+		fitness = 1-(total/labelled.size());
+		return fitness;
+	}
+	public double fitness(){return fitness;}
+	public FSM<A> clone(){
+		FSM<A> clone = new FSM<A>(size());
+		copy(this,clone,0,size());
+		return clone;
+	}
 	public static <B> FSM<B> randomFactory(int numStates, int numAccepting, Iterable<B> alphabet){
 		FSM<B> ret = new FSM<B>(numStates);
 		Random rand = new Random(System.nanoTime());
@@ -72,6 +85,8 @@ public class FSM<A>{
 		while(numAccepting>0) ret.setAccept(accepting.get(--numAccepting), true);
 		return ret;
 	}
+	
+	
 	
 	public static void main(String[] args){
 		List<Integer> alph = Arrays.asList(0,1);
