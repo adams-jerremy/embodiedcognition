@@ -4,13 +4,14 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
-import java.util.RandomAccess;
+import java.util.Random;
 import java.util.Set;
 
 
 public class ListSet<A> implements List<A>, Set<A>{
 	protected final List<A> l;
 	protected final Set<A> s;
+	protected final Random rand = new Random(System.nanoTime());
 	public ListSet(){
 		l = new ArrayList<A>();
 		s = new HashSet<A>();}
@@ -105,6 +106,7 @@ public class ListSet<A> implements List<A>, Set<A>{
 		li.set(e);
 		return ret;
 	}
+	public A choice(){return get(rand.nextInt(size()));}
 	public int size(){ return l.size();}
 	public List<A> subList(int fromIndex, int toIndex){
 	        return null;
