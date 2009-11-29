@@ -113,4 +113,10 @@ public class ListSet<A> implements List<A>, Set<A>{
 	}
 	public Object[] toArray(){ return l.toArray();}
 	public <T> T[] toArray(T[] a){ return l.toArray(a);}
+	public boolean equals(Object o) {
+		if (o == this) return true;
+		if (!(o instanceof ListSet)) return false;
+		ListSet other = (ListSet)o;
+		return l.equals(other.l);
+	}
 }

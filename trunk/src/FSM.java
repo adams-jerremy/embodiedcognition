@@ -36,7 +36,7 @@ public class FSM<A> implements Cloneable{
 		}
 	}
 	public String toString(){
-		StringBuilder sb = new StringBuilder();
+		StringBuilder sb = new StringBuilder(20*size());//21(accepting...) + size()*14(for loops of transitions) + size()*3(for loop accepting)
 		for(int i = 0;i<size();++i){
 			sb.append("State ").append(i).append(":\n");
 			for(A k:transitions[i].keySet()) sb.append(k).append("->").append(transitions[i].get(k)).append('\n');
@@ -48,6 +48,7 @@ public class FSM<A> implements Cloneable{
 	}
 	
 	public boolean offer(Iterable<A> inputs){
+		current = 0;
 		for(A input:inputs)	current = transitions[current].get(input);
 		return accept[current];
 	}
@@ -73,6 +74,21 @@ public class FSM<A> implements Cloneable{
 		copy(this,clone,0,size());
 		return clone;
 	}
+	public boolean equals(Object o){
+		if(o == this) return true;
+		if(! (o instanceof FSM<?>)) return false;
+		FSM<A> other = (FSM)o;
+		if(size() == other.size() && Arrays.equals(accept, other.accept)&&alphabet.equals(other.alphabet)&&Arrays.equals(transitions, other.transitions)) return true;		
+		return false;
+	}
+	public double accuracy(FSM<A> other, List<List<A>> allInputs){
+		double num = 0,numCorrect = 0;
+		for(List<A> input:allInputs){
+			if(offer(input) == other.offer(input)) ++numCorrect;
+			++num;
+		}
+		return numCorrect/num;
+	}
 	public static <B> FSM<B> randomFactory(int numStates, int numAccepting, Iterable<B> alphabet){
 		FSM<B> ret = new FSM<B>(numStates);
 		Random rand = new Random(System.nanoTime());
@@ -85,8 +101,19 @@ public class FSM<A> implements Cloneable{
 		while(numAccepting>0) ret.setAccept(accepting.get(--numAccepting), true);
 		return ret;
 	}
-	
-	
+	public static <B> FSM<B> randomFactory2(int numStates, Iterable<B> alphabet){//taking out numaccepting
+		FSM<B> ret = new FSM<B>(numStates);
+		Random rand = new Random(System.nanoTime());
+		int numAccepting = rand.nextInt(numStates);
+		List<Integer> accepting = new ArrayList<Integer>(numStates);
+		for(int i = 0;i<numStates;++i){
+			accepting.add(i);
+			for(B a:alphabet) ret.addTransition(i, a, rand.nextInt(numStates));
+		}
+		Collections.shuffle(accepting,rand);
+		while(numAccepting>0) ret.setAccept(accepting.get(--numAccepting), true);
+		return ret;
+	}
 	
 	public static void main(String[] args){
 		List<Integer> alph = Arrays.asList(0,1);
