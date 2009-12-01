@@ -14,7 +14,7 @@ public class EEAFSM{
 	private static int NUM_STATES = 10, NUM_ACCEPTING = 2, INPUT_LENGTH = 10, 
 		POPULATION_SIZE=10, NUM_POPS = 2, ESTIMATION_ITERATIONS = (int)((3.0/8.0)*NUM_POPS*POPULATION_SIZE),
 		MUTATION_GENERATIONS = 50;
-	private static ExampleGenerator<Integer> EXAMPLE_GENERATOR = new ActiveExample();
+	private static ExampleGenerator<Integer> EXAMPLE_GENERATOR = new RandomExample();
 	private static final ListSet<Integer> ALPHABET = new ListSet<Integer>(Arrays.asList(0,1));
 	private static final FSM<Integer> TARGET = FSM.randomFactory(NUM_STATES, NUM_ACCEPTING, ALPHABET);
 	private static final Map<List<Integer>,Boolean> labelled = new HashMap<List<Integer>,Boolean>();
