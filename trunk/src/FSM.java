@@ -116,19 +116,17 @@ public class FSM<A> implements Cloneable{
 		return ret;
 	}
 	
-//	public static void main(String[] args){
-//		List<Integer> alph = Arrays.asList(0,1);
-//		FSM<Integer> fsm = randomFactory(10,2,alph);
-//		List<Integer> input = Arrays.asList(0,1,1,0,1,0);
-//		System.out.println(fsm);
-//		System.out.println(fsm.offer(input));
-//		System.out.println(fsm.current());
-		
-//		FSM<Integer> fsm1 = FSM.randomFactory(10,2,alph);
-	//	FSM<Integer> fsm2 = FSM.randomFactory(10,2,alph);
-		//EvoFSM.breed(fsm1, fsm2);
-		
-//	}
+	public static void main(String[] args){
+		List<Integer> alph = Arrays.asList(0,1);
+		FSM<Integer> fsm = randomFactory(10,2,alph);
+		List<Integer> input = Arrays.asList(0,1,1,0,1,0);
+		System.out.println(fsm);
+		System.out.println(fsm.offer(input));
+		System.out.println(fsm.current());
+		FSM<Integer> fsm1 = FSM.randomFactory(10,2,alph);
+		FSM<Integer> fsm2 = FSM.randomFactory(10,2,alph);
+		EvoFSM.breed(fsm1, fsm2);
+	}
 	
 
 }
