@@ -101,6 +101,7 @@ public class FSM<A> implements Cloneable{
 		while(numAccepting>0) ret.setAccept(accepting.get(--numAccepting), true);
 		return ret;
 	}
+	// Generates completely random FSM with only number of states specified and alphabet.
 	public static <B> FSM<B> randomFactory2(int numStates, Iterable<B> alphabet){//taking out numaccepting
 		FSM<B> ret = new FSM<B>(numStates);
 		Random rand = new Random(System.nanoTime());
@@ -115,19 +116,19 @@ public class FSM<A> implements Cloneable{
 		return ret;
 	}
 	
-	public static void main(String[] args){
-		List<Integer> alph = Arrays.asList(0,1);
-		FSM<Integer> fsm = randomFactory(10,2,alph);
-		List<Integer> input = Arrays.asList(0,1,1,0,1,0);
+//	public static void main(String[] args){
+//		List<Integer> alph = Arrays.asList(0,1);
+//		FSM<Integer> fsm = randomFactory(10,2,alph);
+//		List<Integer> input = Arrays.asList(0,1,1,0,1,0);
 //		System.out.println(fsm);
 //		System.out.println(fsm.offer(input));
 //		System.out.println(fsm.current());
 		
-		FSM<Integer> fsm1 = FSM.randomFactory(10,2,alph);
-		FSM<Integer> fsm2 = FSM.randomFactory(10,2,alph);
-		EvoFSM.breed(fsm1, fsm2);
+//		FSM<Integer> fsm1 = FSM.randomFactory(10,2,alph);
+	//	FSM<Integer> fsm2 = FSM.randomFactory(10,2,alph);
+		//EvoFSM.breed(fsm1, fsm2);
 		
-	}
+//	}
 	
 
 }

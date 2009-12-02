@@ -10,8 +10,7 @@ import java.util.ListIterator;
 import java.util.Map;
 import java.util.Random;
 //NUM_STATES - Number of values in FSM
-//NUM_ACCEPTING - What is this? I think this is the number of states that you can go 
-//to from one state.
+//NUM_ACCEPTING - This is the number of final states.
 //INPUT_LENGTH - Test input string length. 2^INPUT_LENGTH strings are being created.
 //POPULATION_SIZE - Is this the number of genomes? If so shouldn't this be 100?
 //NUM_POPS - 'k' The isolated subpopulations.
