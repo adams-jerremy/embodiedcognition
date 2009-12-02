@@ -188,6 +188,7 @@ public class EEAFSM{
 	}
 	private static void evaluateSentences(List<Pair<List<Integer>, Double>> sentencePop){
 		for(Pair<List<Integer>,Double> p : sentencePop){
+			p.second = 0.0;
 			for(List<FSM<Integer>> pop:populations)
 				//for(FSM<Integer> fsm:pop) p.second+=fsm.offer(p.first)?1:0; Only offer top two to Exploration?
 				p.second+=(pop.get(0).offer(p.first)?1:0) + (pop.get(1).offer(p.first)?1:0) ;
