@@ -101,6 +101,35 @@ public class FSM<A> implements Cloneable{
 		while(numAccepting>0) ret.setAccept(accepting.get(--numAccepting), true);
 		return ret;
 	}
+	// Generate Bad FSM
+	public static <B> FSM<B> badHandCodedFactory(Iterable<B> alphabet){
+		int numStates = 10;
+		
+		int[][] transitions;
+		FSM<B> ret = new FSM<B>(numStates);
+		List<Integer> accepting = new ArrayList<Integer>(numStates);
+	    transitions = new int[numStates][2];
+	    for (int i=0;i<numStates-1;++i){
+	    	transitions[i][0] = i;
+	    	transitions[i][1] = i+1;
+	    }
+	    transitions[numStates-1][0]=numStates-1;
+	    transitions[numStates-1][1]=numStates-1;
+		for(int i=0;i<numStates;++i){
+			accepting.add(i);
+			int count =0;			
+			for (B a:alphabet) 
+				{
+       				ret.addTransition(i,a,transitions[i][count]);
+       				count++;
+				}
+		 }
+		ret.setAccept(8, true);
+		ret.setAccept(9, true);
+		System.err.println(ret);
+		return ret;
+		
+		}
 	// Generates completely random FSM with only number of states specified and alphabet.
 	public static <B> FSM<B> randomFactory2(int numStates, Iterable<B> alphabet){//taking out numaccepting
 		FSM<B> ret = new FSM<B>(numStates);
@@ -116,17 +145,19 @@ public class FSM<A> implements Cloneable{
 		return ret;
 	}
 	
-	public static void main(String[] args){
-		List<Integer> alph = Arrays.asList(0,1);
-		FSM<Integer> fsm = randomFactory(10,2,alph);
-		List<Integer> input = Arrays.asList(0,1,1,0,1,0);
-		System.out.println(fsm);
-		System.out.println(fsm.offer(input));
-		System.out.println(fsm.current());
-		FSM<Integer> fsm1 = FSM.randomFactory(10,2,alph);
-		FSM<Integer> fsm2 = FSM.randomFactory(10,2,alph);
-		EvoFSM.breed(fsm1, fsm2);
-	}
+//	public static void main(String[] args){
+//		List<Integer> alph = Arrays.asList(0,1);
+//		FSM<Integer> fsm = randomFactory(10,2,alph);
+//		List<Integer> input = Arrays.asList(0,1,1,0,1,0);
+//		System.out.println(fsm);
+//		System.out.println(fsm.offer(input));
+//		System.out.println(fsm.current());
+		
+//		FSM<Integer> fsm1 = FSM.randomFactory(10,2,alph);
+	//	FSM<Integer> fsm2 = FSM.randomFactory(10,2,alph);
+		//EvoFSM.breed(fsm1, fsm2);
+		
+//	}
 	
 
 }
