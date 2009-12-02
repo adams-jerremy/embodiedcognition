@@ -19,8 +19,9 @@ import java.util.Random;
 public class EEAFSM{
 	private static int NUM_STATES = 10, NUM_ACCEPTING = 2, INPUT_LENGTH = 10, 
 		POPULATION_SIZE=10, NUM_POPS = 2, ESTIMATION_ITERATIONS = (int)((3.0/8.0)*NUM_POPS*POPULATION_SIZE),
-		MUTATION_GENERATIONS = 50;
-	private static ExampleGenerator<Integer> EXAMPLE_GENERATOR = new RandomExample();
+		MUTATION_GENERATIONS = 50, PRINT_EVERY=25;
+	private static final List<ExampleGenerator<Integer>> RUNS = new LinkedList<ExampleGenerator<Integer>>();
+	private static ExampleGenerator<Integer> DEFAULT_EXAMPLE_GENERATOR = new RandomExample();
 	private static final ListSet<Integer> ALPHABET = new ListSet<Integer>(Arrays.asList(0,1));
 	private static final FSM<Integer> TARGET = FSM.randomFactory(NUM_STATES, NUM_ACCEPTING, ALPHABET);
 	private static final Map<List<Integer>,Boolean> labelled = new HashMap<List<Integer>,Boolean>();
@@ -32,13 +33,21 @@ public class EEAFSM{
 	private static final Comparator<Pair<List<Integer>,Double>> sentComp = new Comparator<Pair<List<Integer>,Double>>(){
 		public int compare(Pair<List<Integer>,Double> o1, Pair<List<Integer>,Double> o2){return o1.second>o2.second?-1:o2.second>o1.second?1:0; }};
 	private static final class RandomExample implements ExampleGenerator<Integer>{
-			public List<Integer> generateExample(){return randomSentence();}}
+		public static final ExampleGenerator<Integer> only = new RandomExample();
+		private RandomExample(){}
+		public List<Integer> generateExample(){return randomSentence();}
+		public String toString(){return "Random";}}
 	private static final class InOrderExample implements ExampleGenerator<Integer>{
-			Iterator<List<Integer>> it = generateAllInputs(INPUT_LENGTH).iterator();
-			public List<Integer> generateExample(){
-				if(!it.hasNext()) it = generateAllInputs(INPUT_LENGTH).iterator();
-				return it.next();}}
+		public static final ExampleGenerator<Integer> only = new InOrderExample();
+		private InOrderExample(){}
+		Iterator<List<Integer>> it = generateAllInputs(INPUT_LENGTH).iterator();
+		public List<Integer> generateExample(){
+			if(!it.hasNext()) it = generateAllInputs(INPUT_LENGTH).iterator();
+			return it.next();}
+		public String toString(){return "InOrder";}}
 	private static final class ActiveExample implements ExampleGenerator<Integer>{
+		public static final ExampleGenerator<Integer> only = new ActiveExample();
+		private ActiveExample(){}
 		public List<Integer> generateExample(){
 			List<Pair<List<Integer>,Double>> sentencePop = new LinkedList<Pair<List<Integer>,Double>>();
 			for(int i = 0;i<POPULATION_SIZE*NUM_POPS;++i) sentencePop.add(new Pair<List<Integer>,Double>(randomSentence(),0.0));
@@ -47,7 +56,7 @@ public class EEAFSM{
 				Collections.sort(sentencePop,sentComp);
 				for(int i =0;i<ESTIMATION_ITERATIONS;++i){
 					int fit = rand.nextInt(sentencePop.size()),unfit = rand.nextInt(sentencePop.size());
-					if(fit>unfit){ int temp = fit; fit = unfit; unfit = (temp==0)?sentencePop.size()-1:temp;}
+					if(fit>unfit){ int temp = fit; fit = unfit; unfit = temp;}
 					sentencePop.get(unfit).first = mutateSentence(sentencePop.get(fit).first);
 				}
 			}
@@ -57,7 +66,8 @@ public class EEAFSM{
 			for(Pair<List<Integer>,Double> p:sentencePop)
 				if(p.second>max){max=p.second; argmax = p.first;}
 			return argmax;
-		}}
+		}
+		public String toString(){return "Active";}}
 
 	private static void handleArgs(String[] args){
 		String s;
@@ -66,7 +76,7 @@ public class EEAFSM{
 			switch(s.charAt(0)){
 			case '-':
 				switch(s.charAt(1)){
-				case 't': setType(i.next().toLowerCase()); break;
+				case 'r': setRuns(i.next().toLowerCase()); break;
 				case 'g': setGenerations(i.next()); break;
 				case 'p': setPopulationSize(i.next()); break;
 				case 's': setSize(i.next()); break;
@@ -77,13 +87,14 @@ public class EEAFSM{
 			}
 		}
 	}
-	private static void setType(String s){
-		switch(s.charAt(0)){
-		case 'r': EXAMPLE_GENERATOR = new RandomExample(); break;
-		case 'a': EXAMPLE_GENERATOR = new ActiveExample(); break;
-		case 'i': EXAMPLE_GENERATOR = new InOrderExample(); break;
-		default: System.err.println("Unrecognized Type Requested:"+s); break;
-		}
+	private static void setRuns(String s){
+		for(char c:s.toCharArray())
+			switch(c){
+			case 'r': RUNS.add(RandomExample.only); break;
+			case 'a': RUNS.add(ActiveExample.only); break;
+			case 'i': RUNS.add(InOrderExample.only); break;
+			default: System.err.println("Unrecognized Type Requested:"+s); break;
+			}
 	}
 	private static void setGenerations(String s){
 		try{MUTATION_GENERATIONS = Integer.parseInt(s);
@@ -99,20 +110,26 @@ public class EEAFSM{
 	}
 	public static void main(String[] args){
 		handleArgs(args);
-		init();
-		for(int i = 0;i<1000;++i){
-			if(i%50==0){
-				System.err.println("Iteration "+i);
-				for(List<FSM<Integer>> pop:populations){
-					double accuracy = pop.get(0).accuracy(TARGET,ALL_INPUTS);
-					System.err.println("Max in population fitness: "+pop.get(0).fitness());
-					System.err.println("Max in population accuracy: "+accuracy);
-					if(accuracy == 1.0){System.err.println("Solution found! Exiting"); System.exit(0);}
+		if(RUNS.isEmpty()) RUNS.add(DEFAULT_EXAMPLE_GENERATOR);
+		boolean found;
+		for(ExampleGenerator<Integer> eg: RUNS){
+			found = false;
+			init();
+			for(int i = 0;i<1001;++i){
+				if(i%PRINT_EVERY==0){
+					System.err.println("Iteration "+i+" of "+eg);
+					for(List<FSM<Integer>> pop:populations){
+						double accuracy = pop.get(0).accuracy(TARGET,ALL_INPUTS);
+						System.err.println("Max in population fitness: "+pop.get(0).fitness());
+						System.err.println("Max in population accuracy: "+accuracy);
+						if(accuracy == 1.0){System.err.println("Solution found!"); found = true; break;}
+					}
 				}
+				if(found) break;
+				est();
+				List<Integer> nextTest = eg.generateExample();
+				labelled.put(nextTest,TARGET.offer(nextTest));
 			}
-			est();
-			List<Integer> nextTest = EXAMPLE_GENERATOR.generateExample();
-			labelled.put(nextTest,TARGET.offer(nextTest));
 		}
 	}
 	private static void est(){
@@ -133,7 +150,8 @@ public class EEAFSM{
 				Collections.sort(pop,fitnessComp);
 				for(int i =0;i<ESTIMATION_ITERATIONS;++i){
 					int fit = rand.nextInt(pop.size()),unfit = rand.nextInt(pop.size());
-					if(fit>unfit){ int temp = fit; fit = unfit; unfit = (temp==0)?pop.size()-1:temp;}//TODO: ??? Is this okay?
+					if(fit>unfit){ int temp = fit; fit = unfit; unfit = temp;}
+					if(unfit == 0) unfit = pop.size()-1;
 					pop.set(unfit, EvoFSM.mutate(pop.get(fit)));//TODO: Change mutation to also mutate accepting states?
 				}
 			}
@@ -177,6 +195,8 @@ public class EEAFSM{
 		}
 	}
 	private static void init(){
+		labelled.clear();
+		populations.clear();
 		List<Integer> firstExample = randomSentence();
 		labelled.put(firstExample, TARGET.offer(firstExample));
 	}
