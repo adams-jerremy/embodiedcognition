@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
@@ -8,7 +9,9 @@ import java.util.Random;
 import java.util.Set;
 
 //
-public class ListSet<A> implements List<A>, Set<A>{
+public class ListSet<A> implements List<A>, Set<A>, Serializable{
+
+	private static final long serialVersionUID = 8111323290123777484L;
 	protected final List<A> l;
 	protected final Set<A> s;
 	protected final Random rand = new Random(System.nanoTime());

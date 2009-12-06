@@ -23,6 +23,8 @@ public class EEAFSM{
 	private static int NUM_STATES = 10, NUM_ACCEPTING = 2, INPUT_LENGTH = 10, 
 		POPULATION_SIZE=10, NUM_POPS = 2, ESTIMATION_ITERATIONS = (int)((3.0/8.0)*NUM_POPS*POPULATION_SIZE),
 		MUTATION_GENERATIONS = 50, PRINT_EVERY=25;
+	private static boolean SAVE_CHAMPION = false, SAVE_EXAMPLE = false;
+	private static String FILE_PREFIX = "Winner";
 	private static final List<ExampleGenerator<Integer>> RUNS = new LinkedList<ExampleGenerator<Integer>>();
 	private static ExampleGenerator<Integer> DEFAULT_EXAMPLE_GENERATOR = new RandomExample();
 	private static final ListSet<Integer> ALPHABET = new ListSet<Integer>(Arrays.asList(0,1));
@@ -55,7 +57,6 @@ public class EEAFSM{
 		public List<Integer> generateExample(){
 			List<Pair<List<Integer>,Double>> sentencePop = new LinkedList<Pair<List<Integer>,Double>>();
 			for(int i = 0;i<POPULATION_SIZE*NUM_POPS;++i) sentencePop.add(new Pair<List<Integer>,Double>(randomSentence(),0.0));
-			//while(sentencePop.get(0).second == 0) Trying to guard from picking all 0
 			for(int gen = 0; gen<MUTATION_GENERATIONS;++gen){
 				evaluateSentences(sentencePop);
 				Collections.sort(sentencePop,sentComp);
@@ -81,16 +82,29 @@ public class EEAFSM{
 			switch(s.charAt(0)){
 			case '-':
 				switch(s.charAt(1)){
-				case 'r': setRuns(i.next().toLowerCase()); break;
-				case 'g': setGenerations(i.next()); break;
-				case 'p': setPopulationSize(i.next()); break;
-				case 's': setSize(i.next()); break;
-				default: System.err.println("Unrecognized Option:"+s); break;
+				case 'r': setRuns(i.next().toLowerCase()); break; // Set runs
+				case 'g': setGenerations(i.next()); break; // set generations
+				case 'p': setPopulationSize(i.next()); break; // set population of models/tests
+				case 's': setSize(i.next()); break; // set size of FSM
+				case 'S': setSave(); break;// set champion saved
+				case 'f': setFileName(i.next()); break;//set filename to which champ will be saved
+				case 'e': setSaveExample(); break;// set save examples
+				default: System.err.println("Unrecognized Option: "+s); break;
 				}
 				break;
 			default: break;
 			}
 		}
+	}
+	private static void setSaveExample(){
+		SAVE_EXAMPLE = true;
+	}
+	private static void setSave(){
+		SAVE_CHAMPION = true;
+	}
+	private static void setFileName(String s){
+		setSave();
+		FILE_PREFIX = s;
 	}
 	private static void setRuns(String s){
 		for(char c:s.toCharArray())
@@ -115,6 +129,7 @@ public class EEAFSM{
 	}
 	public static void main(String[] args){
 		handleArgs(args);
+		System.err.println(SAVE_CHAMPION);
 		if(RUNS.isEmpty()) RUNS.add(DEFAULT_EXAMPLE_GENERATOR);
 		boolean found;
 		for(ExampleGenerator<Integer> eg: RUNS){
@@ -127,9 +142,13 @@ public class EEAFSM{
 						double accuracy = pop.get(0).accuracy(TARGET,ALL_INPUTS);
 						System.err.println("Max in population fitness: "+pop.get(0).fitness()+" "+labelled.size());
 						System.err.println("Max in population accuracy: "+accuracy);
-						if(accuracy == 1.0){System.err.println("Solution found!"); found = true; break;}
+						if(accuracy == 1.0||i==1000){
+							System.err.println("Solution found!");
+							if(SAVE_CHAMPION) pop.get(0).write(FILE_PREFIX+eg);
+							found = true; break;
+						}
 					}
-					try{
+					if(SAVE_EXAMPLE) try{
 						BufferedWriter bw = new BufferedWriter(new FileWriter(eg+"Generation"+i));
 						bw.write(labelled.toString());
 						bw.close();

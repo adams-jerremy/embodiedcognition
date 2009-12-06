@@ -1,3 +1,9 @@
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -8,7 +14,8 @@ import java.util.Random;
 import java.util.Set;
 
 //
-public class FSM<A> implements Cloneable{
+public class FSM<A> implements Cloneable, Serializable{
+	private static final long serialVersionUID = 42L;
 	protected Map<A,Integer>[] transitions;
 	protected boolean[] accept;
 	protected int current = 0;
@@ -147,9 +154,35 @@ public class FSM<A> implements Cloneable{
 		return ret;
 	}
 	
+	public static FSM read(String filename){
+		ObjectInputStream is = null;
+		try{
+			is = new ObjectInputStream(new FileInputStream(filename));
+			return (FSM)is.readObject();
+		}catch(Exception e){e.printStackTrace();return null;}
+		finally{if(is!=null) try{ is.close();}catch(IOException e){	e.printStackTrace();}}
+	}
+	public void write(String filename){
+		ObjectOutputStream os = null;
+		try{
+			os = new ObjectOutputStream(new FileOutputStream(filename));
+			os.writeObject(this);
+		}catch(IOException e){e.printStackTrace();}
+		finally{if(os!=null) try{ os.close();}catch(IOException e){	e.printStackTrace();}}
+	}
+	
 	public static void main(String[] args){
 		List<Integer> alph = Arrays.asList(0,1);
 		FSM<Integer> fsm = randomFactory(10,2,alph);
+		System.out.println("Original: \n"+fsm);
+		try{
+			ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("OBJECTFILE"));
+			os.writeObject(fsm);
+			FSM<Integer> next = FSM.read("OBJECTFILE");
+			System.out.println("New: \n"+next);
+			System.out.println("Equal?" + fsm.equals(next));
+		}catch(Exception e){e.printStackTrace();}
+		System.exit(0);
 		List<Integer> input = Arrays.asList(0,1,1,0,1,0);
 		System.out.println(fsm);
 		System.out.println(fsm.offer(input));
