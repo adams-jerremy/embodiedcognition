@@ -1,3 +1,6 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -9,6 +12,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
 import java.util.Random;
+
 //NUM_STATES - Number of values in FSM
 //NUM_ACCEPTING - This is the number of final states.
 //INPUT_LENGTH - Test input string length. 2^INPUT_LENGTH strings are being created.
@@ -24,6 +28,7 @@ public class EEAFSM{
 	private static ExampleGenerator<Integer> DEFAULT_EXAMPLE_GENERATOR = new RandomExample();
 	private static final ListSet<Integer> ALPHABET = new ListSet<Integer>(Arrays.asList(0,1));
 	private static final FSM<Integer> TARGET = FSM.randomFactory(NUM_STATES, NUM_ACCEPTING, ALPHABET);
+	//private static final FSM<Integer> TARGET = FSM.badHandCodedFactory( ALPHABET);
 	private static final Map<List<Integer>,Boolean> labelled = new HashMap<List<Integer>,Boolean>();
 	private static final List<List<FSM<Integer>>> populations = new ArrayList<List<FSM<Integer>>>(NUM_POPS);
 	private static final Random rand = new Random(System.nanoTime());
@@ -51,6 +56,7 @@ public class EEAFSM{
 		public List<Integer> generateExample(){
 			List<Pair<List<Integer>,Double>> sentencePop = new LinkedList<Pair<List<Integer>,Double>>();
 			for(int i = 0;i<POPULATION_SIZE*NUM_POPS;++i) sentencePop.add(new Pair<List<Integer>,Double>(randomSentence(),0.0));
+			//while(sentencePop.get(0).second == 0) Trying to guard from picking all 0
 			for(int gen = 0; gen<MUTATION_GENERATIONS;++gen){
 				evaluateSentences(sentencePop);
 				Collections.sort(sentencePop,sentComp);
@@ -120,10 +126,15 @@ public class EEAFSM{
 					System.err.println("Iteration "+i+" of "+eg);
 					for(List<FSM<Integer>> pop:populations){
 						double accuracy = pop.get(0).accuracy(TARGET,ALL_INPUTS);
-						System.err.println("Max in population fitness: "+pop.get(0).fitness());
+						System.err.println("Max in population fitness: "+pop.get(0).fitness()+" "+labelled.size());
 						System.err.println("Max in population accuracy: "+accuracy);
 						if(accuracy == 1.0){System.err.println("Solution found!"); found = true; break;}
 					}
+					try{
+						BufferedWriter bw = new BufferedWriter(new FileWriter(eg+"Generation"+i));
+						bw.write(labelled.toString());
+						bw.close();
+					}catch(IOException e){e.printStackTrace();}
 				}
 				if(found) break;
 				est();

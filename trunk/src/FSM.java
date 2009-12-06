@@ -82,12 +82,14 @@ public class FSM<A> implements Cloneable{
 		return false;
 	}
 	public double accuracy(FSM<A> other, List<List<A>> allInputs){
-		double num = 0,numCorrect = 0;
+		double numCorrect = 0;
+		List<List<A>> wrong = new ArrayList<List<A>>();
 		for(List<A> input:allInputs){
 			if(offer(input) == other.offer(input)) ++numCorrect;
-			++num;
+			else wrong.add(input);
 		}
-		return numCorrect/num;
+		if(numCorrect/allInputs.size() > .99) System.err.println("WRONG: "+wrong);
+		return numCorrect/allInputs.size();
 	}
 	public static <B> FSM<B> randomFactory(int numStates, int numAccepting, Iterable<B> alphabet){
 		FSM<B> ret = new FSM<B>(numStates);
