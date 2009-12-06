@@ -16,10 +16,9 @@ import java.util.Random;
 //NUM_STATES - Number of values in FSM
 //NUM_ACCEPTING - This is the number of final states.
 //INPUT_LENGTH - Test input string length. 2^INPUT_LENGTH strings are being created.
-//POPULATION_SIZE - Is this the number of genomes? If so shouldn't this be 100?
+//POPULATION_SIZE - Number of genomes. I think increasing this won't really matter. 
 //NUM_POPS - 'k' The isolated subpopulations.
-//ESTIMATION_ITERATIONS - What exactly is this? If this is the number of generations
-//It should be 50. 
+//ESTIMATION_ITERATIONS - The number of iterations that take place. 
 public class EEAFSM{
 	private static int NUM_STATES = 10, NUM_ACCEPTING = 2, INPUT_LENGTH = 10, 
 		POPULATION_SIZE=10, NUM_POPS = 2, ESTIMATION_ITERATIONS = (int)((3.0/8.0)*NUM_POPS*POPULATION_SIZE),
