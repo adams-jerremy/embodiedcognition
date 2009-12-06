@@ -25,6 +25,7 @@ public class EEAFSM{
 		MUTATION_GENERATIONS = 50, PRINT_EVERY=25;
 	private static boolean SAVE_CHAMPION = false, SAVE_EXAMPLE = false;
 	private static String FILE_PREFIX = "Winner";
+	private static FSM<Integer> SEED = null;
 	private static final List<ExampleGenerator<Integer>> RUNS = new LinkedList<ExampleGenerator<Integer>>();
 	private static ExampleGenerator<Integer> DEFAULT_EXAMPLE_GENERATOR = new RandomExample();
 	private static final ListSet<Integer> ALPHABET = new ListSet<Integer>(Arrays.asList(0,1));
@@ -89,12 +90,16 @@ public class EEAFSM{
 				case 'S': setSave(); break;// set champion saved
 				case 'f': setFileName(i.next()); break;//set filename to which champ will be saved
 				case 'e': setSaveExample(); break;// set save examples
+				case 'b': setSeed(i.next()); break;//set seed
 				default: System.err.println("Unrecognized Option: "+s); break;
 				}
 				break;
 			default: break;
 			}
 		}
+	}
+	private static void setSeed(String filename){
+		SEED = FSM.read(filename);
 	}
 	private static void setSaveExample(){
 		SAVE_EXAMPLE = true;
@@ -165,7 +170,7 @@ public class EEAFSM{
 		if(populations.size()==0){
 			for(int i =0;i<NUM_POPS;++i){
 				populations.add(new ArrayList<FSM<Integer>>(POPULATION_SIZE));
-				for(int j =0;j<POPULATION_SIZE;++j) populations.get(i).add(FSM.randomFactory(NUM_STATES, NUM_ACCEPTING, ALPHABET));
+				for(int j =0;j<POPULATION_SIZE;++j) populations.get(i).add(SEED==null?FSM.randomFactory(NUM_STATES, NUM_ACCEPTING, ALPHABET):SEED);
 			}
 		}else{
 			for(List<FSM<Integer>> pop:populations){
