@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
 import java.util.Random;
+import java.util.TreeMap;
 
 //NUM_STATES - Number of values in FSM
 //NUM_ACCEPTING - This is the number of final states.
@@ -22,10 +23,11 @@ import java.util.Random;
 public class EEAFSM{
 	private static int NUM_STATES = 10, NUM_ACCEPTING = 2, INPUT_LENGTH = 10, 
 		POPULATION_SIZE=10, NUM_POPS = 2, ESTIMATION_ITERATIONS = (int)((3.0/8.0)*NUM_POPS*POPULATION_SIZE),
-		MUTATION_GENERATIONS = 50, PRINT_EVERY=25;
+		MUTATION_GENERATIONS = 50, PRINT_EVERY=25, LIMIT = 1001;
 	private static boolean SAVE_CHAMPION = false, SAVE_EXAMPLE = false;
 	private static String FILE_PREFIX = "Winner";
 	private static FSM<Integer> SEED = null;
+	private static Map<ExampleGenerator<Integer>,Map<Integer,List<Double>>> output = new HashMap<ExampleGenerator<Integer>,Map<Integer,List<Double>>>();
 	private static final List<ExampleGenerator<Integer>> RUNS = new LinkedList<ExampleGenerator<Integer>>();
 	private static ExampleGenerator<Integer> DEFAULT_EXAMPLE_GENERATOR = new RandomExample();
 	private static final ListSet<Integer> ALPHABET = new ListSet<Integer>(Arrays.asList(0,1));
@@ -91,12 +93,17 @@ public class EEAFSM{
 				case 'f': setFileName(i.next()); break;//set filename to which champ will be saved
 				case 'e': setSaveExample(); break;// set save examples
 				case 'b': setSeed(i.next()); break;//set seed
+				case 'l': setLimit(i.next()); break; //set limit
 				default: System.err.println("Unrecognized Option: "+s); break;
 				}
 				break;
 			default: break;
 			}
 		}
+	}
+	private static void setLimit(String limit){
+		try{MUTATION_GENERATIONS = Integer.parseInt(limit);
+		}catch(NumberFormatException e){ System.err.println("Imparseable limit: "+limit);}
 	}
 	private static void setSeed(String filename){
 		SEED = FSM.read(filename);
@@ -134,23 +141,26 @@ public class EEAFSM{
 	}
 	public static void main(String[] args){
 		handleArgs(args);
-		System.err.println(SAVE_CHAMPION);
 		if(RUNS.isEmpty()) RUNS.add(DEFAULT_EXAMPLE_GENERATOR);
 		boolean found;
 		for(ExampleGenerator<Integer> eg: RUNS){
+			if(!output.containsKey(eg)) output.put(eg, new TreeMap<Integer,List<Double>>());
 			found = false;
 			init();
-			for(int i = 0;i<1001;++i){
+			for(int i = 0;i<LIMIT;++i){
 				if(i%PRINT_EVERY==0){
+					if(!output.get(eg).containsKey(i)) output.get(eg).put(i, new LinkedList<Double>());
+					
 					System.err.println("Iteration "+i+" of "+eg);
 					for(List<FSM<Integer>> pop:populations){
 						double accuracy = pop.get(0).accuracy(TARGET,ALL_INPUTS);
+						output.get(eg).get(i).add(accuracy);
 						System.err.println("Max in population fitness: "+pop.get(0).fitness()+" "+labelled.size());
 						System.err.println("Max in population accuracy: "+accuracy);
-						if(accuracy == 1.0||i==1000){
+						if(accuracy == 1.0||i==LIMIT-1){
 							System.err.println("Solution found!");
 							if(SAVE_CHAMPION) pop.get(0).write(FILE_PREFIX+eg);
-							found = true; break;
+							found = true;
 						}
 					}
 					if(SAVE_EXAMPLE) try{
@@ -164,7 +174,22 @@ public class EEAFSM{
 				List<Integer> nextTest = eg.generateExample();
 				labelled.put(nextTest,TARGET.offer(nextTest));
 			}
+			System.out.println(output);
 		}
+		for(ExampleGenerator<Integer> eg:output.keySet()){
+			System.out.println(eg+" averages");
+			for(int i:output.get(eg).keySet()){
+				List<Double> l = output.get(eg).get(i);
+				System.out.println(i+": "+mean(l));
+			}
+		}
+	}
+	private static double mean(Iterable<Double> i){
+		double total=0, size=0;
+		for(double d:i){
+			total+=d; ++size;
+		}
+		return (size==0)?0:total/size;
 	}
 	private static void est(){
 		if(populations.size()==0){
