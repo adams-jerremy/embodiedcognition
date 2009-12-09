@@ -102,7 +102,7 @@ public class EEAFSM{
 		}
 	}
 	private static void setLimit(String limit){
-		try{MUTATION_GENERATIONS = Integer.parseInt(limit);
+		try{LIMIT = Integer.parseInt(limit);
 		}catch(NumberFormatException e){ System.err.println("Imparseable limit: "+limit);}
 	}
 	private static void setSeed(String filename){
@@ -158,6 +158,8 @@ public class EEAFSM{
 						//System.err.println("Max in population fitness: "+pop.get(0).fitness()+" "+labelled.size());
 						//System.err.println("Max in population accuracy: "+accuracy);
 						if(accuracy == 1.0||i==LIMIT-1){
+							for(int j = i+PRINT_EVERY;j<LIMIT;j+=PRINT_EVERY)
+								output.get(eg).get(j).add(accuracy);
 							//System.err.println("Solution found!");
 							if(SAVE_CHAMPION) pop.get(0).write(FILE_PREFIX+eg);
 							found = true;
