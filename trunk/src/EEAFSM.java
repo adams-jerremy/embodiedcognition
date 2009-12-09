@@ -151,14 +151,14 @@ public class EEAFSM{
 				if(i%PRINT_EVERY==0){
 					if(!output.get(eg).containsKey(i)) output.get(eg).put(i, new LinkedList<Double>());
 					
-					System.err.println("Iteration "+i+" of "+eg);
+					//System.err.println("Iteration "+i+" of "+eg);
 					for(List<FSM<Integer>> pop:populations){
 						double accuracy = pop.get(0).accuracy(TARGET,ALL_INPUTS);
 						output.get(eg).get(i).add(accuracy);
-						System.err.println("Max in population fitness: "+pop.get(0).fitness()+" "+labelled.size());
-						System.err.println("Max in population accuracy: "+accuracy);
+						//System.err.println("Max in population fitness: "+pop.get(0).fitness()+" "+labelled.size());
+						//System.err.println("Max in population accuracy: "+accuracy);
 						if(accuracy == 1.0||i==LIMIT-1){
-							System.err.println("Solution found!");
+							//System.err.println("Solution found!");
 							if(SAVE_CHAMPION) pop.get(0).write(FILE_PREFIX+eg);
 							found = true;
 						}
@@ -174,7 +174,7 @@ public class EEAFSM{
 				List<Integer> nextTest = eg.generateExample();
 				labelled.put(nextTest,TARGET.offer(nextTest));
 			}
-			System.out.println(output);
+			//System.out.println(output);
 		}
 		for(ExampleGenerator<Integer> eg:output.keySet()){
 			System.out.println(eg+" averages");
