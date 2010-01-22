@@ -1,0 +1,26 @@
+<chromosome id="485" primary-parent-id="370"><neuron id="0" type="in" activation="linear"/>
+<neuron id="1" type="in" activation="linear"/>
+<neuron id="2" type="in" activation="linear"/>
+<neuron id="3" type="in" activation="linear"/>
+<neuron id="4" type="in" activation="linear"/>
+<neuron id="5" type="in" activation="linear"/>
+<neuron id="6" type="in" activation="linear"/>
+<neuron id="7" type="in" activation="linear"/>
+<neuron id="8" type="in" activation="linear"/>
+<neuron id="9" type="in" activation="linear"/>
+<neuron id="10" type="out" activation="sigmoid"/>
+<connection id="11" src-id="0" dest-id="10" weight="1.302147544463839"/>
+<connection id="12" src-id="1" dest-id="10" weight="-0.03132982800068386"/>
+<connection id="13" src-id="2" dest-id="10" weight="-1.7318379284405694"/>
+<connection id="14" src-id="3" dest-id="10" weight="-0.5050227642059326"/>
+<connection id="16" src-id="5" dest-id="10" weight="-1.689485398288131"/>
+<connection id="17" src-id="6" dest-id="10" weight="0.16442060470581055"/>
+<connection id="18" src-id="7" dest-id="10" weight="-2.653137223804091"/>
+<connection id="20" src-id="9" dest-id="10" weight="-1.5039578480869094"/>
+<neuron id="252" type="hid" activation="sigmoid"/>
+<connection id="253" src-id="8" dest-id="252" weight="1.756439578066673"/>
+<connection id="254" src-id="252" dest-id="10" weight="-3.5243800372557583"/>
+<neuron id="255" type="hid" activation="sigmoid"/>
+<connection id="256" src-id="4" dest-id="255" weight="-0.4597095701590739"/>
+<connection id="257" src-id="255" dest-id="10" weight="-1.6687078753533433"/>
+</chromosome>

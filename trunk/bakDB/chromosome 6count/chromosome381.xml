@@ -1,0 +1,22 @@
+<chromosome id="381" primary-parent-id="81" secondary-parent-id="74"><neuron id="0" type="in" activation="linear"/>
+<neuron id="1" type="in" activation="linear"/>
+<neuron id="2" type="in" activation="linear"/>
+<neuron id="3" type="in" activation="linear"/>
+<neuron id="4" type="in" activation="linear"/>
+<neuron id="5" type="in" activation="linear"/>
+<neuron id="6" type="in" activation="linear"/>
+<neuron id="7" type="in" activation="linear"/>
+<neuron id="8" type="in" activation="linear"/>
+<neuron id="9" type="in" activation="linear"/>
+<neuron id="10" type="out" activation="sigmoid"/>
+<connection id="11" src-id="0" dest-id="10" weight="-0.27893292903900146"/>
+<connection id="12" src-id="1" dest-id="10" weight="-0.9126399755477905"/>
+<connection id="13" src-id="2" dest-id="10" weight="-0.7358313848044693"/>
+<connection id="14" src-id="3" dest-id="10" weight="-2.207535908755424"/>
+<connection id="15" src-id="4" dest-id="10" weight="-0.8925846419278397"/>
+<connection id="16" src-id="5" dest-id="10" weight="-0.17726445198059082"/>
+<connection id="17" src-id="6" dest-id="10" weight="-0.28810203075408936"/>
+<connection id="18" src-id="7" dest-id="10" weight="-1.6307579842400224"/>
+<connection id="19" src-id="8" dest-id="10" weight="-0.6519185554461534"/>
+<connection id="20" src-id="9" dest-id="10" weight="-0.5016753673553467"/>
+</chromosome>
