@@ -1,0 +1,32 @@
+<chromosome id="3486" primary-parent-id="3419"><neuron id="0" type="in" activation="linear"/>
+<neuron id="1" type="in" activation="linear"/>
+<neuron id="2" type="in" activation="linear"/>
+<neuron id="3" type="in" activation="linear"/>
+<neuron id="4" type="in" activation="linear"/>
+<neuron id="5" type="in" activation="linear"/>
+<neuron id="6" type="in" activation="linear"/>
+<neuron id="7" type="in" activation="linear"/>
+<neuron id="8" type="in" activation="linear"/>
+<neuron id="9" type="in" activation="linear"/>
+<neuron id="10" type="out" activation="sigmoid"/>
+<connection id="11" src-id="0" dest-id="10" weight="3.9190673903672644"/>
+<connection id="12" src-id="1" dest-id="10" weight="3.851408030289104"/>
+<connection id="13" src-id="2" dest-id="10" weight="1.8671093885592418"/>
+<connection id="14" src-id="3" dest-id="10" weight="5.485122700969676"/>
+<connection id="16" src-id="5" dest-id="10" weight="1.8909335206301368"/>
+<connection id="17" src-id="6" dest-id="10" weight="4.6643642328005175"/>
+<connection id="18" src-id="7" dest-id="10" weight="4.997261312475878"/>
+<connection id="20" src-id="9" dest-id="10" weight="2.713271474684027"/>
+<neuron id="252" type="hid" activation="sigmoid"/>
+<connection id="253" src-id="8" dest-id="252" weight="3.0179062420879763"/>
+<connection id="254" src-id="252" dest-id="10" weight="2.0488200509281995"/>
+<neuron id="255" type="hid" activation="sigmoid"/>
+<connection id="256" src-id="4" dest-id="255" weight="2.0639821475888405"/>
+<connection id="410" src-id="2" dest-id="252" weight="-0.893937609381547"/>
+<connection id="421" src-id="252" dest-id="255" weight="0.6361463465201813"/>
+<connection id="428" src-id="9" dest-id="252" weight="1.8178267177231953"/>
+<connection id="432" src-id="6" dest-id="255" weight="4.252517462575737"/>
+<neuron id="439" type="hid" activation="sigmoid"/>
+<connection id="440" src-id="255" dest-id="439" weight="2.2939427498235423"/>
+<connection id="441" src-id="439" dest-id="10" weight="-19.394909053862612"/>
+</chromosome>
