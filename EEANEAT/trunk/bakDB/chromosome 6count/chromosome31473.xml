@@ -1,0 +1,60 @@
+<chromosome id="31473" primary-parent-id="26726"><neuron id="0" type="in" activation="linear"/>
+<neuron id="1" type="in" activation="linear"/>
+<neuron id="2" type="in" activation="linear"/>
+<neuron id="3" type="in" activation="linear"/>
+<neuron id="4" type="in" activation="linear"/>
+<neuron id="5" type="in" activation="linear"/>
+<neuron id="6" type="in" activation="linear"/>
+<neuron id="7" type="in" activation="linear"/>
+<neuron id="8" type="in" activation="linear"/>
+<neuron id="9" type="in" activation="linear"/>
+<neuron id="10" type="out" activation="sigmoid"/>
+<connection id="11" src-id="0" dest-id="10" weight="6.86919093517266"/>
+<connection id="13" src-id="2" dest-id="10" weight="6.487344573452504"/>
+<connection id="14" src-id="3" dest-id="10" weight="8.280233369416008"/>
+<connection id="16" src-id="5" dest-id="10" weight="4.413268467081881"/>
+<connection id="17" src-id="6" dest-id="10" weight="6.952551571055301"/>
+<connection id="18" src-id="7" dest-id="10" weight="6.000931147352816"/>
+<connection id="19" src-id="8" dest-id="10" weight="6.12821288198951"/>
+<connection id="20" src-id="9" dest-id="10" weight="5.722870350511295"/>
+<neuron id="252" type="hid" activation="sigmoid"/>
+<connection id="253" src-id="8" dest-id="252" weight="-1.2712397859303146"/>
+<neuron id="255" type="hid" activation="sigmoid"/>
+<connection id="256" src-id="4" dest-id="255" weight="-5.78539398386488"/>
+<connection id="257" src-id="255" dest-id="10" weight="-7.866055373169447"/>
+<neuron id="439" type="hid" activation="sigmoid"/>
+<connection id="440" src-id="255" dest-id="439" weight="2.2855925055865964"/>
+<connection id="441" src-id="439" dest-id="10" weight="-8.914329293370395"/>
+<neuron id="442" type="hid" activation="sigmoid"/>
+<connection id="443" src-id="1" dest-id="442" weight="-14.995558653439392"/>
+<connection id="444" src-id="442" dest-id="10" weight="-7.0148336337435495"/>
+<connection id="598" src-id="1" dest-id="439" weight="6.91567497180914"/>
+<neuron id="751" type="hid" activation="sigmoid"/>
+<connection id="752" src-id="252" dest-id="751" weight="5.539650705183706"/>
+<neuron id="760" type="hid" activation="sigmoid"/>
+<connection id="761" src-id="252" dest-id="760" weight="0.002521580515040145"/>
+<connection id="762" src-id="760" dest-id="255" weight="5.253274470830503"/>
+<connection id="1191" src-id="3" dest-id="252" weight="14.895804617684961"/>
+<connection id="1478" src-id="3" dest-id="760" weight="-10.07127039378179"/>
+<connection id="1482" src-id="252" dest-id="439" weight="10.912848408348834"/>
+<connection id="1485" src-id="7" dest-id="751" weight="1.7104925308388625"/>
+<connection id="1652" src-id="4" dest-id="760" weight="1.303971997491042"/>
+<connection id="1943" src-id="760" dest-id="10" weight="1.3223902372657481"/>
+<connection id="2244" src-id="442" dest-id="255" weight="2.3226384071463095"/>
+<neuron id="2424" type="hid" activation="sigmoid"/>
+<connection id="2426" src-id="2424" dest-id="10" weight="-19.212038599071096"/>
+<connection id="2563" src-id="760" dest-id="439" weight="5.549002172148535"/>
+<connection id="2725" src-id="751" dest-id="442" weight="2.2045796873944763"/>
+<connection id="5015" src-id="439" dest-id="2424" weight="1.852214602856646"/>
+<neuron id="5592" type="hid" activation="sigmoid"/>
+<connection id="5593" src-id="8" dest-id="5592" weight="1.9889657264281335"/>
+<connection id="5594" src-id="5592" dest-id="751" weight="3.390248427986789"/>
+<neuron id="5728" type="hid" activation="sigmoid"/>
+<connection id="5729" src-id="751" dest-id="5728" weight="3.6872762621112205"/>
+<connection id="5730" src-id="5728" dest-id="2424" weight="10.533731637588032"/>
+<connection id="7802" src-id="252" dest-id="5592" weight="3.9178325429162397"/>
+<connection id="8247" src-id="5592" dest-id="439" weight="-0.6222000126450054"/>
+<neuron id="10389" type="hid" activation="sigmoid"/>
+<connection id="10390" src-id="3" dest-id="10389" weight="1.0618733637843678"/>
+<connection id="10391" src-id="10389" dest-id="2424" weight="-10.74896089993478"/>
+</chromosome>

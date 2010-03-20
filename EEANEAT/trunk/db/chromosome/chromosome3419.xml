@@ -1,0 +1,32 @@
+<chromosome id="3419" primary-parent-id="3074"><neuron id="0" type="in" activation="linear"/>
+<neuron id="1" type="in" activation="linear"/>
+<neuron id="2" type="in" activation="linear"/>
+<neuron id="3" type="in" activation="linear"/>
+<neuron id="4" type="in" activation="linear"/>
+<neuron id="5" type="in" activation="linear"/>
+<neuron id="6" type="in" activation="linear"/>
+<neuron id="7" type="in" activation="linear"/>
+<neuron id="8" type="in" activation="linear"/>
+<neuron id="9" type="in" activation="linear"/>
+<neuron id="10" type="out" activation="sigmoid"/>
+<connection id="11" src-id="0" dest-id="10" weight="4.700648357352961"/>
+<connection id="12" src-id="1" dest-id="10" weight="3.851408030289104"/>
+<connection id="13" src-id="2" dest-id="10" weight="0.47565219582611185"/>
+<connection id="14" src-id="3" dest-id="10" weight="2.5972657274098947"/>
+<connection id="16" src-id="5" dest-id="10" weight="5.204219718860642"/>
+<connection id="17" src-id="6" dest-id="10" weight="4.794453857877505"/>
+<connection id="18" src-id="7" dest-id="10" weight="3.5703008134842578"/>
+<connection id="20" src-id="9" dest-id="10" weight="3.52072143900425"/>
+<neuron id="252" type="hid" activation="sigmoid"/>
+<connection id="253" src-id="8" dest-id="252" weight="3.0124898049729345"/>
+<connection id="254" src-id="252" dest-id="10" weight="3.2376662089513064"/>
+<neuron id="255" type="hid" activation="sigmoid"/>
+<connection id="256" src-id="4" dest-id="255" weight="3.5817070554552566"/>
+<connection id="410" src-id="2" dest-id="252" weight="-0.12932207264098694"/>
+<connection id="421" src-id="252" dest-id="255" weight="0.6361463465201813"/>
+<connection id="428" src-id="9" dest-id="252" weight="2.6797415556994295"/>
+<connection id="432" src-id="6" dest-id="255" weight="5.251911350254827"/>
+<neuron id="439" type="hid" activation="sigmoid"/>
+<connection id="440" src-id="255" dest-id="439" weight="1.8841227042664679"/>
+<connection id="441" src-id="439" dest-id="10" weight="-17.918796931949775"/>
+</chromosome>

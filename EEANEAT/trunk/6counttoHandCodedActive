@@ -1,0 +1,1378 @@
+State 0:
+0.0->0
+1.0->1
+State 1:
+0.0->1
+1.0->2
+State 2:
+0.0->2
+1.0->3
+State 3:
+0.0->3
+1.0->4
+State 4:
+0.0->4
+1.0->5
+State 5:
+0.0->5
+1.0->6
+State 6:
+0.0->6
+1.0->7
+State 7:
+0.0->7
+1.0->8
+State 8:
+0.0->8
+1.0->9
+State 9:
+0.0->9
+1.0->9
+Accepting States: [8 9 ]
+
+YPOYPYP
+false
+INFO  loaded properties from eea.properties
+INFO  Properties: run.reset == false
+INFO  Properties: random.seed == null [1260497515864]
+INFO  Properties: id.file == ./db/id.xml
+INFO  Properties: survival.rate == 0.2
+INFO  Properties: selector.roulette == false
+INFO  Properties: selector.elitism == true
+INFO  Properties: selector.elitism.min.specie.size == 1
+INFO  Properties: remove.connection.mutation.rate == 0.00
+INFO  Properties: remove.connection.max.weight == 100
+INFO  Properties: remove.connection.strategy == null [skewed]
+INFO  Properties: topology.mutation.classic == false
+INFO  Properties: add.connection.mutation.rate == 0.01
+INFO  Properties: recurrent == disallowed
+INFO  Properties: add.neuron.mutation.rate == 0.005
+INFO  Properties: weight.mutation.rate == 0.8
+INFO  Properties: weight.mutation.std.dev == 1.5
+INFO  Properties: prune.mutation.rate == null [1.0]
+INFO  Properties: popul.size == 150
+INFO  Properties: initial.topology.activation == sigmoid
+INFO  Properties: initial.topology.activation.input == linear
+INFO  Properties: initial.topology.activation.output == null [null]
+INFO  Properties: neat.id.file == ./db/neatid.xml
+INFO  Properties: stimulus.size == 10
+INFO  Properties: initial.topology.num.hidden.neurons == 0
+INFO  Properties: response.size == 1
+INFO  Properties: initial.topology.fully.connected == true
+INFO  Properties: weight.min == -500.0
+INFO  Properties: weight.max == 500.0
+INFO  Properties: chrom.compat.excess.coeff == 1.0
+INFO  Properties: chrom.compat.disjoint.coeff == 1.0
+INFO  Properties: chrom.compat.common.coeff == 0.04
+INFO  Properties: speciation.threshold == 0.2
+INFO  Properties: ann.type == anji
+INFO  Properties: recurrent.cycles == 1
+INFO  Properties: persistence.class == com.anji.persistence.FilePersistence
+INFO  Properties: base.dir == ./db
+INFO  Properties: num.generations == 100
+INFO  Properties: fitness.target == 0.999
+INFO  Properties: fitness.threshold == 0.900
+INFO  Properties: run.name == eearun
+INFO  Properties: persist.all == false
+INFO  Properties: persist.champions == true
+INFO  Properties: persist.last == true
+INFO  Properties: presentation.dir == ./nevt
+INFO  Properties: fitness_function.class == com.anji.neat.NeatTargetFitnessFunction
+INFO  Properties: random.seed == null [1260497516281]
+INFO  Properties: ann.type == anji
+INFO  Properties: recurrent.cycles == 1
+INFO  Properties: recurrent == disallowed
+INFO  Properties: stimuli.file == sigmoid_xor_stimuli.txt
+INFO  Properties: targets.file == sigmoid_xor_targets.txt
+INFO  Properties: targets.range == 0.2
+INFO  Properties: fitness.function.adjust.for.network.size.factor == 0
+INFO  genotype from previous run
+INFO  Properties: eea.run == true
+INFO  Run: start
+INFO  species count: 26
+INFO  max: id=29321 score=1.0 size=68
+INFO  max: id=29357 score=1.0 size=74
+INFO  max: id=29497 score=1.0 size=69
+INFO  max: id=29725 score=1.0 size=72
+INFO  max: id=30445 score=1.0 size=78
+INFO  max: id=30986 score=1.0 size=85
+INFO  max: id=31384 score=1.0 size=85
+INFO  max: id=31410 score=1.0 size=97
+INFO  max: id=31554 score=1.0 size=67
+INFO  max: id=31746 score=1.0 size=93
+INFO  max: id=31809 score=1.0 size=96
+INFO  max: id=32154 score=1.0 size=98
+INFO  max: id=32406 score=1.0 size=96
+INFO  max: id=32464 score=1.0 size=95
+INFO  max: id=32482 score=1.0 size=85
+INFO  max: id=32581 score=1.0 size=98
+INFO  max: id=32587 score=1.0 size=83
+INFO  max: id=32596 score=1.0 size=79
+INFO  max: id=32600 score=1.0 size=79
+INFO  max: id=32605 score=1.0 size=75
+INFO  max: id=32615 score=1.0 size=83
+INFO  max: id=32616 score=1.0 size=88
+INFO  max: id=32632 score=1.0 size=90
+INFO  max: id=32623 score=1.0 size=101
+INFO  max: id=32624 score=1.0 size=78
+INFO  max: id=32619 score=1.0 size=83
+INFO  max: id=32513 score=1.0 size=71
+INFO  max: id=32517 score=1.0 size=95
+INFO  max: id=32522 score=1.0 size=101
+INFO  max: id=32536 score=1.0 size=73
+INFO  # chromosomes with max fitness: 30
+INFO  champ: id=29321 score=1.0 size=68
+1.0/1
+697.0/1024
+Iteration: 0 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.6806640625
+INFO  species count: 26
+INFO  max: id=29321 score=1.0 size=68
+INFO  max: id=29725 score=1.0 size=72
+INFO  max: id=30445 score=1.0 size=78
+INFO  max: id=30986 score=1.0 size=85
+INFO  max: id=31384 score=1.0 size=85
+INFO  max: id=31410 score=1.0 size=97
+INFO  max: id=31554 score=1.0 size=67
+INFO  max: id=31746 score=1.0 size=93
+INFO  max: id=31809 score=1.0 size=96
+INFO  max: id=32154 score=1.0 size=98
+INFO  max: id=32406 score=1.0 size=96
+INFO  max: id=32482 score=1.0 size=85
+INFO  max: id=32581 score=1.0 size=98
+INFO  max: id=32605 score=1.0 size=75
+INFO  max: id=32615 score=1.0 size=83
+INFO  max: id=32632 score=1.0 size=90
+INFO  max: id=32624 score=1.0 size=78
+INFO  max: id=43067 score=1.0 size=72
+INFO  max: id=43091 score=1.0 size=81
+INFO  max: id=43110 score=1.0 size=75
+INFO  max: id=43111 score=1.0 size=88
+INFO  max: id=43150 score=1.0 size=96
+INFO  max: id=43154 score=1.0 size=108
+INFO  max: id=43178 score=1.0 size=105
+INFO  max: id=32623 score=1.0 size=101
+INFO  max: id=43060 score=1.0 size=101
+INFO  max: id=43074 score=1.0 size=102
+INFO  # chromosomes with max fitness: 27
+INFO  champ: id=29321 score=1.0 size=68
+2.0/2
+697.0/1024
+Iteration: 1 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.6806640625
+INFO  species count: 30
+INFO  max: id=29725 score=1.0 size=72
+INFO  max: id=30445 score=1.0 size=78
+INFO  max: id=31384 score=1.0 size=85
+INFO  max: id=32605 score=1.0 size=75
+INFO  max: id=32615 score=1.0 size=83
+INFO  max: id=32624 score=1.0 size=78
+INFO  max: id=43067 score=1.0 size=72
+INFO  max: id=43091 score=1.0 size=81
+INFO  max: id=43111 score=1.0 size=88
+INFO  max: id=43150 score=1.0 size=96
+INFO  max: id=43178 score=1.0 size=105
+INFO  max: id=32623 score=1.0 size=101
+INFO  max: id=43209 score=1.0 size=72
+INFO  max: id=43212 score=1.0 size=67
+INFO  max: id=43220 score=1.0 size=100
+INFO  max: id=43240 score=1.0 size=97
+INFO  max: id=43254 score=1.0 size=99
+INFO  max: id=43264 score=1.0 size=81
+INFO  max: id=43295 score=1.0 size=87
+INFO  max: id=43315 score=1.0 size=93
+INFO  max: id=43238 score=1.0 size=79
+INFO  max: id=43299 score=1.0 size=79
+INFO  max: id=43215 score=1.0 size=97
+INFO  # chromosomes with max fitness: 23
+INFO  champ: id=29725 score=1.0 size=72
+3.0/3
+669.0/1024
+Iteration: 2 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.6533203125
+INFO  species count: 32
+INFO  max: id=29725 score=1.0 size=72
+INFO  max: id=32615 score=1.0 size=83
+INFO  max: id=32624 score=1.0 size=78
+INFO  max: id=43067 score=1.0 size=72
+INFO  max: id=43111 score=1.0 size=88
+INFO  max: id=43150 score=1.0 size=96
+INFO  max: id=32623 score=1.0 size=101
+INFO  max: id=43209 score=1.0 size=72
+INFO  max: id=43212 score=1.0 size=67
+INFO  max: id=43220 score=1.0 size=100
+INFO  max: id=43240 score=1.0 size=97
+INFO  max: id=43254 score=1.0 size=99
+INFO  max: id=43264 score=1.0 size=81
+INFO  max: id=43295 score=1.0 size=87
+INFO  max: id=43315 score=1.0 size=93
+INFO  max: id=43333 score=1.0 size=83
+INFO  max: id=43338 score=1.0 size=89
+INFO  max: id=43339 score=1.0 size=82
+INFO  max: id=43364 score=1.0 size=107
+INFO  max: id=43371 score=1.0 size=100
+INFO  max: id=43397 score=1.0 size=110
+INFO  max: id=43445 score=1.0 size=76
+INFO  # chromosomes with max fitness: 22
+INFO  champ: id=29725 score=1.0 size=72
+4.0/4
+669.0/1024
+Iteration: 3 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.6533203125
+INFO  species count: 33
+INFO  max: id=32624 score=1.0 size=78
+INFO  max: id=43067 score=1.0 size=72
+INFO  max: id=43264 score=1.0 size=81
+INFO  max: id=43364 score=1.0 size=107
+INFO  max: id=43397 score=1.0 size=110
+INFO  max: id=43475 score=1.0 size=102
+INFO  max: id=43484 score=1.0 size=90
+INFO  max: id=43486 score=1.0 size=98
+INFO  max: id=43511 score=1.0 size=80
+INFO  max: id=43514 score=1.0 size=88
+INFO  max: id=43516 score=1.0 size=90
+INFO  max: id=43558 score=1.0 size=95
+INFO  max: id=43564 score=1.0 size=100
+INFO  # chromosomes with max fitness: 13
+INFO  champ: id=32624 score=1.0 size=78
+5.0/5
+960.0/1024
+Iteration: 4 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.9375
+INFO  species count: 39
+INFO  max: id=43264 score=1.0 size=81
+INFO  max: id=43364 score=1.0 size=107
+INFO  max: id=43397 score=1.0 size=110
+INFO  max: id=43475 score=1.0 size=102
+INFO  max: id=43516 score=1.0 size=90
+INFO  max: id=43614 score=1.0 size=104
+INFO  max: id=43622 score=1.0 size=79
+INFO  max: id=43623 score=1.0 size=79
+INFO  max: id=43637 score=1.0 size=81
+INFO  max: id=43674 score=1.0 size=96
+INFO  max: id=43677 score=1.0 size=101
+INFO  max: id=43688 score=1.0 size=98
+INFO  max: id=43712 score=1.0 size=105
+INFO  # chromosomes with max fitness: 13
+INFO  champ: id=43264 score=1.0 size=81
+6.0/6
+946.0/1024
+Iteration: 5 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.923828125
+INFO  species count: 40
+INFO  max: id=43264 score=1.0 size=81
+INFO  max: id=43397 score=1.0 size=110
+INFO  max: id=43516 score=1.0 size=90
+INFO  max: id=43622 score=1.0 size=79
+INFO  max: id=43623 score=1.0 size=79
+INFO  max: id=43674 score=1.0 size=96
+INFO  max: id=43688 score=1.0 size=98
+INFO  max: id=43712 score=1.0 size=105
+INFO  max: id=43763 score=1.0 size=89
+INFO  max: id=43776 score=1.0 size=82
+INFO  max: id=43779 score=1.0 size=92
+INFO  max: id=43794 score=1.0 size=100
+INFO  max: id=43830 score=1.0 size=104
+INFO  max: id=43831 score=1.0 size=84
+INFO  max: id=43834 score=1.0 size=96
+INFO  max: id=43852 score=1.0 size=106
+INFO  max: id=43857 score=1.0 size=103
+INFO  max: id=43860 score=1.0 size=105
+INFO  # chromosomes with max fitness: 18
+INFO  champ: id=43264 score=1.0 size=81
+7.0/7
+946.0/1024
+Iteration: 6 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.923828125
+INFO  species count: 39
+INFO  max: id=43516 score=1.0 size=90
+INFO  max: id=43622 score=1.0 size=79
+INFO  max: id=43623 score=1.0 size=79
+INFO  max: id=43674 score=1.0 size=96
+INFO  max: id=43688 score=1.0 size=98
+INFO  max: id=43763 score=1.0 size=89
+INFO  max: id=43779 score=1.0 size=92
+INFO  max: id=43794 score=1.0 size=100
+INFO  max: id=43830 score=1.0 size=104
+INFO  max: id=43831 score=1.0 size=84
+INFO  max: id=43834 score=1.0 size=96
+INFO  max: id=43860 score=1.0 size=105
+INFO  max: id=43921 score=1.0 size=88
+INFO  max: id=43934 score=1.0 size=108
+INFO  max: id=43935 score=1.0 size=120
+INFO  max: id=43972 score=1.0 size=113
+INFO  max: id=44001 score=1.0 size=95
+INFO  max: id=44010 score=1.0 size=100
+INFO  # chromosomes with max fitness: 18
+INFO  champ: id=43516 score=1.0 size=90
+8.0/8
+956.0/1024
+Iteration: 7 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.93359375
+INFO  species count: 36
+INFO  max: id=43623 score=1.0 size=79
+INFO  max: id=43674 score=1.0 size=96
+INFO  max: id=43688 score=1.0 size=98
+INFO  max: id=43763 score=1.0 size=89
+INFO  max: id=43779 score=1.0 size=92
+INFO  max: id=43794 score=1.0 size=100
+INFO  max: id=43830 score=1.0 size=104
+INFO  max: id=43831 score=1.0 size=84
+INFO  max: id=43834 score=1.0 size=96
+INFO  max: id=43860 score=1.0 size=105
+INFO  max: id=43921 score=1.0 size=88
+INFO  max: id=43934 score=1.0 size=108
+INFO  max: id=43935 score=1.0 size=120
+INFO  max: id=43972 score=1.0 size=113
+INFO  max: id=44001 score=1.0 size=95
+INFO  max: id=44010 score=1.0 size=100
+INFO  max: id=44089 score=1.0 size=91
+INFO  max: id=44109 score=1.0 size=118
+INFO  max: id=44134 score=1.0 size=98
+INFO  max: id=44145 score=1.0 size=107
+INFO  # chromosomes with max fitness: 20
+INFO  champ: id=43623 score=1.0 size=79
+9.0/9
+988.0/1024
+Iteration: 8 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.96484375
+INFO  species count: 37
+INFO  max: id=43623 score=1.0 size=79
+INFO  max: id=43763 score=1.0 size=89
+INFO  max: id=43779 score=1.0 size=92
+INFO  max: id=43831 score=1.0 size=84
+INFO  max: id=43834 score=1.0 size=96
+INFO  max: id=43860 score=1.0 size=105
+INFO  max: id=43921 score=1.0 size=88
+INFO  max: id=43934 score=1.0 size=108
+INFO  max: id=43935 score=1.0 size=120
+INFO  max: id=44001 score=1.0 size=95
+INFO  max: id=44010 score=1.0 size=100
+INFO  max: id=44089 score=1.0 size=91
+INFO  max: id=44109 score=1.0 size=118
+INFO  max: id=44145 score=1.0 size=107
+INFO  max: id=44286 score=1.0 size=98
+INFO  max: id=44291 score=1.0 size=103
+INFO  # chromosomes with max fitness: 16
+INFO  champ: id=43623 score=1.0 size=79
+10.0/10
+988.0/1024
+Iteration: 9 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.96484375
+INFO  species count: 40
+INFO  max: id=43623 score=1.0 size=79
+INFO  max: id=43779 score=1.0 size=92
+INFO  max: id=43834 score=1.0 size=96
+INFO  max: id=43935 score=1.0 size=120
+INFO  max: id=44145 score=1.0 size=107
+INFO  max: id=44286 score=1.0 size=98
+INFO  max: id=44291 score=1.0 size=103
+INFO  max: id=44470 score=1.0 size=123
+INFO  max: id=44475 score=1.0 size=99
+INFO  max: id=44481 score=1.0 size=101
+INFO  max: id=44487 score=1.0 size=82
+INFO  max: id=44514 score=1.0 size=111
+INFO  max: id=44515 score=1.0 size=90
+INFO  # chromosomes with max fitness: 13
+INFO  champ: id=43623 score=1.0 size=79
+11.0/11
+988.0/1024
+Iteration: 10 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.96484375
+INFO  species count: 40
+INFO  max: id=43623 score=1.0 size=79
+INFO  max: id=43935 score=1.0 size=120
+INFO  max: id=44291 score=1.0 size=103
+INFO  max: id=44470 score=1.0 size=123
+INFO  max: id=44481 score=1.0 size=101
+INFO  max: id=44487 score=1.0 size=82
+INFO  max: id=44515 score=1.0 size=90
+INFO  max: id=44650 score=1.0 size=101
+INFO  max: id=44686 score=1.0 size=106
+INFO  max: id=44736 score=1.0 size=104
+INFO  # chromosomes with max fitness: 10
+INFO  champ: id=43623 score=1.0 size=79
+12.0/12
+988.0/1024
+Iteration: 11 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.96484375
+INFO  species count: 37
+INFO  max: id=43623 score=1.0 size=79
+INFO  max: id=43935 score=1.0 size=120
+INFO  max: id=44736 score=1.0 size=104
+INFO  max: id=44874 score=1.0 size=100
+INFO  max: id=44884 score=1.0 size=84
+INFO  max: id=44909 score=1.0 size=124
+INFO  # chromosomes with max fitness: 6
+INFO  champ: id=43623 score=1.0 size=79
+13.0/13
+988.0/1024
+Iteration: 12 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.96484375
+INFO  species count: 43
+INFO  max: id=43623 score=1.0 size=79
+INFO  max: id=44874 score=1.0 size=100
+INFO  max: id=44884 score=1.0 size=84
+INFO  max: id=44983 score=1.0 size=113
+INFO  # chromosomes with max fitness: 4
+INFO  champ: id=43623 score=1.0 size=79
+14.0/14
+988.0/1024
+Iteration: 13 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.96484375
+INFO  species count: 38
+INFO  max: id=44874 score=1.0 size=100
+INFO  max: id=44983 score=1.0 size=113
+INFO  max: id=45169 score=1.0 size=100
+INFO  # chromosomes with max fitness: 3
+INFO  champ: id=44874 score=1.0 size=100
+15.0/15
+979.0/1024
+Iteration: 14 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.9560546875
+INFO  species count: 36
+INFO  max: id=44874 score=1.0 size=100
+INFO  max: id=44983 score=1.0 size=113
+INFO  max: id=45366 score=1.0 size=110
+INFO  max: id=45399 score=1.0 size=94
+INFO  # chromosomes with max fitness: 4
+INFO  champ: id=44874 score=1.0 size=100
+16.0/16
+979.0/1024
+Iteration: 15 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.9560546875
+INFO  species count: 38
+INFO  max: id=44874 score=1.0 size=100
+INFO  max: id=44983 score=1.0 size=113
+INFO  max: id=45497 score=1.0 size=80
+INFO  max: id=45578 score=1.0 size=122
+INFO  max: id=45600 score=1.0 size=104
+INFO  # chromosomes with max fitness: 5
+INFO  champ: id=44874 score=1.0 size=100
+17.0/17
+979.0/1024
+Iteration: 16 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.9560546875
+INFO  species count: 40
+INFO  max: id=44874 score=1.0 size=100
+INFO  max: id=45578 score=1.0 size=122
+INFO  max: id=45600 score=1.0 size=104
+INFO  max: id=45747 score=1.0 size=94
+INFO  # chromosomes with max fitness: 4
+INFO  champ: id=44874 score=1.0 size=100
+18.0/18
+979.0/1024
+Iteration: 17 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.9560546875
+INFO  species count: 42
+INFO  max: id=45578 score=1.0 size=122
+INFO  max: id=45600 score=1.0 size=104
+INFO  # chromosomes with max fitness: 2
+INFO  champ: id=45578 score=1.0 size=122
+19.0/19
+1007.0/1024
+Iteration: 18 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.9833984375
+INFO  species count: 35
+INFO  max: id=45578 score=1.0 size=122
+INFO  # chromosomes with max fitness: 1
+INFO  champ: id=45578 score=1.0 size=122
+20.0/20
+1007.0/1024
+Iteration: 19 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.9833984375
+INFO  species count: 36
+INFO  max: id=46240 score=1.0 size=126
+INFO  # chromosomes with max fitness: 1
+INFO  champ: id=46240 score=1.0 size=126
+21.0/21
+1008.0/1024
+Iteration: 20 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.984375
+INFO  species count: 37
+INFO  max: id=46240 score=1.0 size=126
+INFO  # chromosomes with max fitness: 1
+INFO  champ: id=46240 score=1.0 size=126
+22.0/22
+1008.0/1024
+Iteration: 21 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.984375
+INFO  species count: 38
+INFO  max: id=46240 score=1.0 size=126
+INFO  # chromosomes with max fitness: 1
+INFO  champ: id=46240 score=1.0 size=126
+22.0/22
+1008.0/1024
+Iteration: 22 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.984375
+INFO  species count: 35
+INFO  max: id=46240 score=1.0 size=126
+INFO  max: id=46823 score=1.0 size=131
+INFO  # chromosomes with max fitness: 2
+INFO  champ: id=46240 score=1.0 size=126
+23.0/23
+1008.0/1024
+Iteration: 23 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.984375
+INFO  species count: 38
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=46823 score=0.9310936375 size=131
+23.0/24
+INFO  species count: 39
+INFO  max: id=47174 score=1.0 size=131
+INFO  # chromosomes with max fitness: 1
+INFO  champ: id=47174 score=1.0 size=131
+24.0/24
+1008.0/1024
+Iteration: 24 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.984375
+INFO  species count: 36
+INFO  max: id=47174 score=1.0 size=131
+INFO  max: id=47435 score=1.0 size=136
+INFO  # chromosomes with max fitness: 2
+INFO  champ: id=47174 score=1.0 size=131
+25.0/25
+1008.0/1024
+Iteration: 25 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.984375
+INFO  species count: 37
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=47571 score=0.92533386875 size=112
+25.0/26
+INFO  species count: 38
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=47844 score=0.9771376625 size=117
+25.0/26
+INFO  species count: 40
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=47844 score=0.9771376625 size=117
+25.0/26
+INFO  species count: 40
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=48149 score=0.98229339375 size=104
+25.0/26
+INFO  species count: 36
+INFO  max: id=48448 score=1.0 size=105
+INFO  # chromosomes with max fitness: 1
+INFO  champ: id=48448 score=1.0 size=105
+26.0/26
+987.0/1024
+Iteration: 26 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.9638671875
+INFO  species count: 37
+INFO  max: id=48629 score=1.0 size=143
+INFO  # chromosomes with max fitness: 1
+INFO  champ: id=48629 score=1.0 size=143
+27.0/27
+1008.0/1024
+Iteration: 27 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.984375
+INFO  species count: 43
+INFO  max: id=48629 score=1.0 size=143
+INFO  max: id=48788 score=1.0 size=156
+INFO  # chromosomes with max fitness: 2
+INFO  champ: id=48629 score=1.0 size=143
+28.0/28
+1008.0/1024
+Iteration: 28 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.984375
+INFO  species count: 38
+INFO  max: id=48629 score=1.0 size=143
+INFO  # chromosomes with max fitness: 1
+INFO  champ: id=48629 score=1.0 size=143
+29.0/29
+1008.0/1024
+Iteration: 29 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.984375
+INFO  species count: 40
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=48833 score=0.9918455375 size=134
+29.0/30
+INFO  species count: 45
+INFO  max: id=49530 score=1.0 size=145
+INFO  # chromosomes with max fitness: 1
+INFO  champ: id=49530 score=1.0 size=145
+30.0/30
+999.0/1024
+Iteration: 30 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.9755859375
+INFO  species count: 42
+INFO  max: id=49530 score=1.0 size=145
+INFO  max: id=49735 score=1.0 size=102
+INFO  # chromosomes with max fitness: 2
+INFO  champ: id=49530 score=1.0 size=145
+31.0/31
+999.0/1024
+Iteration: 31 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.9755859375
+INFO  species count: 41
+INFO  max: id=49735 score=1.0 size=102
+INFO  max: id=49965 score=1.0 size=127
+INFO  max: id=49989 score=1.0 size=146
+INFO  # chromosomes with max fitness: 3
+INFO  champ: id=49735 score=1.0 size=102
+32.0/32
+995.0/1024
+Iteration: 32 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.9716796875
+INFO  species count: 40
+INFO  max: id=49965 score=1.0 size=127
+INFO  max: id=49989 score=1.0 size=146
+INFO  # chromosomes with max fitness: 2
+INFO  champ: id=49965 score=1.0 size=127
+33.0/33
+995.0/1024
+Iteration: 33 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.9716796875
+INFO  species count: 42
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=46240 score=0.942117775 size=126
+33.0/34
+INFO  species count: 42
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=50581 score=0.95128015625 size=111
+33.0/34
+INFO  species count: 37
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=50873 score=0.9548417375 size=113
+33.0/34
+INFO  species count: 39
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=51032 score=0.985888975 size=116
+33.0/34
+INFO  species count: 39
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=51295 score=0.995582425 size=148
+33.0/34
+INFO  species count: 38
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=51295 score=0.995582425 size=148
+33.0/34
+INFO  species count: 38
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=51295 score=0.995582425 size=148
+33.0/34
+INFO  species count: 38
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=51295 score=0.995582425 size=148
+33.0/34
+INFO  species count: 41
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=51295 score=0.995582425 size=148
+33.0/34
+INFO  species count: 38
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=51295 score=0.995582425 size=148
+33.0/34
+INFO  species count: 41
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=52664 score=0.99572008125 size=166
+33.0/34
+INFO  species count: 37
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=52664 score=0.99572008125 size=166
+33.0/34
+INFO  species count: 38
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=52664 score=0.99572008125 size=166
+33.0/34
+INFO  species count: 39
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=52664 score=0.99572008125 size=166
+33.0/34
+INFO  species count: 43
+INFO  max: id=53341 score=1.0 size=114
+INFO  # chromosomes with max fitness: 1
+INFO  champ: id=53341 score=1.0 size=114
+34.0/34
+1022.0/1024
+Iteration: 34 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.998046875
+INFO  species count: 41
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=51295 score=0.99570850625 size=148
+34.0/35
+INFO  species count: 35
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=51295 score=0.99570850625 size=148
+34.0/35
+INFO  species count: 38
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=51295 score=0.99570850625 size=148
+34.0/35
+INFO  species count: 35
+INFO  max: id=54021 score=1.0 size=114
+INFO  max: id=54094 score=1.0 size=131
+INFO  # chromosomes with max fitness: 2
+INFO  champ: id=54021 score=1.0 size=114
+35.0/35
+1017.0/1024
+Iteration: 35 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.9931640625
+INFO  species count: 37
+INFO  max: id=54021 score=1.0 size=114
+INFO  # chromosomes with max fitness: 1
+INFO  champ: id=54021 score=1.0 size=114
+36.0/36
+1017.0/1024
+Iteration: 36 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.9931640625
+INFO  species count: 33
+INFO  max: id=54454 score=1.0 size=169
+INFO  # chromosomes with max fitness: 1
+INFO  champ: id=54454 score=1.0 size=169
+37.0/37
+1006.0/1024
+Iteration: 37 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.982421875
+INFO  species count: 35
+INFO  max: id=54582 score=1.0 size=162
+INFO  # chromosomes with max fitness: 1
+INFO  champ: id=54582 score=1.0 size=162
+38.0/38
+1018.0/1024
+Iteration: 38 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.994140625
+INFO  species count: 35
+INFO  max: id=54582 score=1.0 size=162
+INFO  # chromosomes with max fitness: 1
+INFO  champ: id=54582 score=1.0 size=162
+39.0/39
+1018.0/1024
+Iteration: 39 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.994140625
+INFO  species count: 34
+INFO  max: id=54582 score=1.0 size=162
+INFO  # chromosomes with max fitness: 1
+INFO  champ: id=54582 score=1.0 size=162
+40.0/40
+1018.0/1024
+Iteration: 40 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.994140625
+INFO  species count: 36
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=52940 score=0.9933021625 size=155
+39.0/41
+INFO  species count: 36
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=52940 score=0.9933021625 size=155
+39.0/41
+INFO  species count: 37
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=52940 score=0.9933021625 size=155
+39.0/41
+INFO  species count: 38
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=52940 score=0.9933021625 size=155
+39.0/41
+INFO  species count: 40
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=52940 score=0.9933021625 size=155
+39.0/41
+INFO  species count: 38
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=52940 score=0.9933021625 size=155
+39.0/41
+INFO  species count: 39
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=52940 score=0.9933021625 size=155
+39.0/41
+INFO  species count: 38
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=52940 score=0.9933021625 size=155
+39.0/41
+INFO  species count: 41
+INFO  max: id=56644 score=1.0 size=177
+INFO  # chromosomes with max fitness: 1
+INFO  champ: id=56644 score=1.0 size=177
+41.0/41
+1023.0/1024
+Iteration: 41 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.9990234375
+INFO  species count: 36
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=52940 score=0.993461375 size=155
+40.0/42
+INFO  species count: 35
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=52940 score=0.993461375 size=155
+40.0/42
+INFO  species count: 37
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=52940 score=0.993461375 size=155
+40.0/42
+INFO  species count: 38
+INFO  max: id=57313 score=1.0 size=159
+INFO  # chromosomes with max fitness: 1
+INFO  champ: id=57313 score=1.0 size=159
+42.0/42
+1021.0/1024
+Iteration: 42 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.9970703125
+INFO  species count: 33
+INFO  max: id=57313 score=1.0 size=159
+INFO  max: id=57571 score=1.0 size=184
+INFO  # chromosomes with max fitness: 2
+INFO  champ: id=57313 score=1.0 size=159
+43.0/43
+1021.0/1024
+Iteration: 43 of Active
+Max fitness g: 1.0
+Max Accuracy: 0.9970703125
+INFO  species count: 36
+INFO  max: id=57571 score=1.0 size=184
+INFO  # chromosomes with max fitness: 1
+INFO  champ: id=57571 score=1.0 size=184
+44.0/44
+1024.0/1024
+Iteration: 44 of Active
+Max fitness g: 1.0
+Max Accuracy: 1.0
+Solution found!
+INFO  generation of first solution == 0
+INFO  champ # connections == 149
+INFO  champ # hidden nodes == 24
+INFO  Run: end [20:11:57 - 20:17:10] [313045]
+INFO  species count: 1
+INFO  max: id=57959 score=1.0 size=21
+INFO  max: id=57964 score=1.0 size=21
+INFO  max: id=57965 score=1.0 size=21
+INFO  max: id=57966 score=1.0 size=21
+INFO  max: id=57967 score=1.0 size=21
+INFO  max: id=57969 score=1.0 size=21
+INFO  max: id=57971 score=1.0 size=21
+INFO  max: id=57972 score=1.0 size=21
+INFO  max: id=57973 score=1.0 size=21
+INFO  max: id=57975 score=1.0 size=21
+INFO  max: id=57977 score=1.0 size=21
+INFO  max: id=57979 score=1.0 size=21
+INFO  max: id=57981 score=1.0 size=21
+INFO  max: id=57983 score=1.0 size=21
+INFO  max: id=57985 score=1.0 size=21
+INFO  max: id=57986 score=1.0 size=21
+INFO  max: id=57989 score=1.0 size=21
+INFO  max: id=57990 score=1.0 size=21
+INFO  max: id=57993 score=1.0 size=21
+INFO  max: id=57996 score=1.0 size=21
+INFO  max: id=57997 score=1.0 size=21
+INFO  max: id=57998 score=1.0 size=21
+INFO  max: id=57999 score=1.0 size=21
+INFO  max: id=58000 score=1.0 size=21
+INFO  max: id=58005 score=1.0 size=21
+INFO  max: id=58007 score=1.0 size=21
+INFO  max: id=58010 score=1.0 size=21
+INFO  max: id=58012 score=1.0 size=21
+INFO  max: id=58018 score=1.0 size=21
+INFO  max: id=58019 score=1.0 size=21
+INFO  # chromosomes with max fitness: 30
+INFO  champ: id=57959 score=1.0 size=21
+1.0/1
+663.0/1024
+Iteration: 0 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.6474609375
+INFO  species count: 4
+INFO  max: id=57964 score=1.0 size=21
+INFO  max: id=57965 score=1.0 size=21
+INFO  max: id=57966 score=1.0 size=21
+INFO  max: id=57971 score=1.0 size=21
+INFO  max: id=57973 score=1.0 size=21
+INFO  max: id=57975 score=1.0 size=21
+INFO  max: id=57979 score=1.0 size=21
+INFO  max: id=57986 score=1.0 size=21
+INFO  max: id=57989 score=1.0 size=21
+INFO  max: id=57990 score=1.0 size=21
+INFO  max: id=57993 score=1.0 size=21
+INFO  max: id=57996 score=1.0 size=21
+INFO  max: id=57997 score=1.0 size=21
+INFO  max: id=57999 score=1.0 size=21
+INFO  max: id=58000 score=1.0 size=21
+INFO  max: id=58005 score=1.0 size=21
+INFO  max: id=58007 score=1.0 size=21
+INFO  max: id=58012 score=1.0 size=21
+INFO  max: id=58018 score=1.0 size=21
+INFO  max: id=58019 score=1.0 size=21
+INFO  max: id=58195 score=1.0 size=21
+INFO  max: id=58197 score=1.0 size=23
+INFO  max: id=58198 score=1.0 size=21
+INFO  max: id=58199 score=1.0 size=23
+INFO  max: id=58202 score=1.0 size=21
+INFO  max: id=58204 score=1.0 size=21
+INFO  max: id=58205 score=1.0 size=21
+INFO  max: id=58208 score=1.0 size=21
+INFO  max: id=58209 score=1.0 size=21
+INFO  max: id=58211 score=1.0 size=21
+INFO  # chromosomes with max fitness: 30
+INFO  champ: id=57964 score=1.0 size=21
+2.0/2
+707.0/1024
+Iteration: 1 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.6904296875
+INFO  species count: 6
+INFO  max: id=57965 score=1.0 size=21
+INFO  max: id=58371 score=1.0 size=23
+INFO  max: id=58414 score=1.0 size=23
+INFO  max: id=58458 score=1.0 size=23
+INFO  max: id=57966 score=1.0 size=21
+INFO  max: id=57971 score=1.0 size=21
+INFO  max: id=57975 score=1.0 size=21
+INFO  max: id=57979 score=1.0 size=21
+INFO  max: id=57986 score=1.0 size=21
+INFO  max: id=57989 score=1.0 size=21
+INFO  max: id=57990 score=1.0 size=21
+INFO  max: id=57993 score=1.0 size=21
+INFO  max: id=57996 score=1.0 size=21
+INFO  max: id=57997 score=1.0 size=21
+INFO  max: id=57999 score=1.0 size=21
+INFO  max: id=58000 score=1.0 size=21
+INFO  max: id=58005 score=1.0 size=21
+INFO  max: id=58007 score=1.0 size=21
+INFO  max: id=58012 score=1.0 size=21
+INFO  max: id=58018 score=1.0 size=21
+INFO  max: id=58019 score=1.0 size=21
+INFO  max: id=58195 score=1.0 size=21
+INFO  max: id=58197 score=1.0 size=23
+INFO  max: id=58199 score=1.0 size=23
+INFO  max: id=58202 score=1.0 size=21
+INFO  max: id=58205 score=1.0 size=21
+INFO  max: id=58208 score=1.0 size=21
+INFO  max: id=58211 score=1.0 size=21
+INFO  # chromosomes with max fitness: 28
+INFO  champ: id=57965 score=1.0 size=21
+3.0/3
+878.0/1024
+Iteration: 2 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.857421875
+INFO  species count: 7
+INFO  max: id=57965 score=1.0 size=21
+INFO  max: id=58414 score=1.0 size=23
+INFO  max: id=58508 score=1.0 size=23
+INFO  max: id=58536 score=1.0 size=23
+INFO  max: id=58568 score=1.0 size=23
+INFO  max: id=58575 score=1.0 size=24
+INFO  max: id=58584 score=1.0 size=23
+INFO  max: id=58458 score=1.0 size=23
+INFO  max: id=58502 score=1.0 size=23
+INFO  max: id=58522 score=1.0 size=24
+INFO  max: id=58540 score=1.0 size=23
+INFO  max: id=58544 score=1.0 size=23
+INFO  max: id=58546 score=1.0 size=23
+INFO  # chromosomes with max fitness: 13
+INFO  champ: id=57965 score=1.0 size=21
+4.0/4
+878.0/1024
+Iteration: 3 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.857421875
+INFO  species count: 9
+INFO  max: id=57965 score=1.0 size=21
+INFO  max: id=58414 score=1.0 size=23
+INFO  max: id=58508 score=1.0 size=23
+INFO  max: id=58536 score=1.0 size=23
+INFO  max: id=58568 score=1.0 size=23
+INFO  max: id=58697 score=1.0 size=23
+INFO  max: id=58757 score=1.0 size=25
+INFO  max: id=58642 score=1.0 size=23
+INFO  max: id=58644 score=1.0 size=25
+INFO  max: id=58647 score=1.0 size=23
+INFO  max: id=58662 score=1.0 size=23
+INFO  max: id=58663 score=1.0 size=23
+INFO  max: id=58667 score=1.0 size=23
+INFO  max: id=58671 score=1.0 size=24
+INFO  max: id=58682 score=1.0 size=23
+INFO  max: id=58693 score=1.0 size=23
+INFO  max: id=58694 score=1.0 size=25
+INFO  max: id=58704 score=1.0 size=23
+INFO  max: id=58708 score=1.0 size=23
+INFO  max: id=58718 score=1.0 size=23
+INFO  max: id=58722 score=1.0 size=23
+INFO  max: id=58725 score=1.0 size=23
+INFO  max: id=58726 score=1.0 size=23
+INFO  max: id=58734 score=1.0 size=24
+INFO  max: id=58738 score=1.0 size=23
+INFO  max: id=58749 score=1.0 size=24
+INFO  # chromosomes with max fitness: 26
+INFO  champ: id=57965 score=1.0 size=21
+5.0/5
+878.0/1024
+Iteration: 4 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.857421875
+INFO  species count: 10
+INFO  max: id=58868 score=1.0 size=23
+INFO  # chromosomes with max fitness: 1
+INFO  champ: id=58868 score=1.0 size=23
+6.0/6
+858.0/1024
+Iteration: 5 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.837890625
+INFO  species count: 13
+INFO  max: id=58868 score=1.0 size=23
+INFO  max: id=58996 score=1.0 size=27
+INFO  # chromosomes with max fitness: 2
+INFO  champ: id=58868 score=1.0 size=23
+7.0/7
+858.0/1024
+Iteration: 6 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.837890625
+INFO  species count: 19
+INFO  max: id=58868 score=1.0 size=23
+INFO  max: id=58996 score=1.0 size=27
+INFO  max: id=59084 score=1.0 size=30
+INFO  max: id=59092 score=1.0 size=28
+INFO  max: id=59114 score=1.0 size=26
+INFO  max: id=59165 score=1.0 size=24
+INFO  max: id=59111 score=1.0 size=28
+INFO  max: id=59126 score=1.0 size=28
+INFO  max: id=59102 score=1.0 size=27
+INFO  max: id=59120 score=1.0 size=27
+INFO  max: id=59154 score=1.0 size=27
+INFO  max: id=59155 score=1.0 size=27
+INFO  max: id=59164 score=1.0 size=27
+INFO  max: id=59183 score=1.0 size=27
+INFO  # chromosomes with max fitness: 14
+INFO  champ: id=58868 score=1.0 size=23
+8.0/8
+858.0/1024
+Iteration: 7 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.837890625
+INFO  species count: 23
+INFO  max: id=58868 score=1.0 size=23
+INFO  max: id=58996 score=1.0 size=27
+INFO  max: id=59084 score=1.0 size=30
+INFO  max: id=59092 score=1.0 size=28
+INFO  max: id=59114 score=1.0 size=26
+INFO  max: id=59243 score=1.0 size=32
+INFO  max: id=59255 score=1.0 size=30
+INFO  max: id=59256 score=1.0 size=31
+INFO  max: id=59257 score=1.0 size=26
+INFO  # chromosomes with max fitness: 9
+INFO  champ: id=58868 score=1.0 size=23
+9.0/9
+858.0/1024
+Iteration: 8 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.837890625
+INFO  species count: 28
+INFO  max: id=58996 score=1.0 size=27
+INFO  max: id=59084 score=1.0 size=30
+INFO  max: id=59092 score=1.0 size=28
+INFO  max: id=59114 score=1.0 size=26
+INFO  max: id=59408 score=1.0 size=36
+INFO  max: id=59484 score=1.0 size=36
+INFO  max: id=59419 score=1.0 size=27
+INFO  # chromosomes with max fitness: 7
+INFO  champ: id=58996 score=1.0 size=27
+10.0/10
+844.0/1024
+Iteration: 9 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.82421875
+INFO  species count: 31
+INFO  max: id=59084 score=1.0 size=30
+INFO  max: id=59092 score=1.0 size=28
+INFO  max: id=59114 score=1.0 size=26
+INFO  max: id=59408 score=1.0 size=36
+INFO  max: id=59484 score=1.0 size=36
+INFO  max: id=59580 score=1.0 size=36
+INFO  # chromosomes with max fitness: 6
+INFO  champ: id=59084 score=1.0 size=30
+11.0/11
+889.0/1024
+Iteration: 10 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.8681640625
+INFO  species count: 33
+INFO  max: id=59084 score=1.0 size=30
+INFO  max: id=59092 score=1.0 size=28
+INFO  max: id=59484 score=1.0 size=36
+INFO  # chromosomes with max fitness: 3
+INFO  champ: id=59084 score=1.0 size=30
+12.0/12
+889.0/1024
+Iteration: 11 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.8681640625
+INFO  species count: 33
+INFO  max: id=59084 score=1.0 size=30
+INFO  max: id=59092 score=1.0 size=28
+INFO  max: id=59484 score=1.0 size=36
+INFO  max: id=59903 score=1.0 size=37
+INFO  # chromosomes with max fitness: 4
+INFO  champ: id=59084 score=1.0 size=30
+13.0/13
+889.0/1024
+Iteration: 12 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.8681640625
+INFO  species count: 37
+INFO  max: id=59484 score=1.0 size=36
+INFO  max: id=59976 score=1.0 size=28
+INFO  # chromosomes with max fitness: 2
+INFO  champ: id=59484 score=1.0 size=36
+14.0/14
+844.0/1024
+Iteration: 13 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.82421875
+INFO  species count: 33
+INFO  max: id=59976 score=1.0 size=28
+INFO  # chromosomes with max fitness: 1
+INFO  champ: id=59976 score=1.0 size=28
+15.0/15
+890.0/1024
+Iteration: 14 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.869140625
+INFO  species count: 34
+INFO  max: id=59976 score=1.0 size=28
+INFO  max: id=60342 score=1.0 size=40
+INFO  max: id=60358 score=1.0 size=44
+INFO  # chromosomes with max fitness: 3
+INFO  champ: id=59976 score=1.0 size=28
+16.0/16
+890.0/1024
+Iteration: 15 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.869140625
+INFO  species count: 34
+INFO  max: id=59976 score=1.0 size=28
+INFO  max: id=60342 score=1.0 size=40
+INFO  max: id=60358 score=1.0 size=44
+INFO  max: id=60468 score=1.0 size=46
+INFO  max: id=60550 score=1.0 size=49
+INFO  # chromosomes with max fitness: 5
+INFO  champ: id=59976 score=1.0 size=28
+17.0/17
+890.0/1024
+Iteration: 16 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.869140625
+INFO  species count: 34
+INFO  max: id=59976 score=1.0 size=28
+INFO  max: id=60342 score=1.0 size=40
+INFO  max: id=60358 score=1.0 size=44
+INFO  max: id=60468 score=1.0 size=46
+INFO  max: id=60702 score=1.0 size=46
+INFO  # chromosomes with max fitness: 5
+INFO  champ: id=59976 score=1.0 size=28
+18.0/18
+890.0/1024
+Iteration: 17 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.869140625
+INFO  species count: 33
+INFO  max: id=59976 score=1.0 size=28
+INFO  max: id=60342 score=1.0 size=40
+INFO  max: id=60358 score=1.0 size=44
+INFO  max: id=60468 score=1.0 size=46
+INFO  max: id=60702 score=1.0 size=46
+INFO  # chromosomes with max fitness: 5
+INFO  champ: id=59976 score=1.0 size=28
+19.0/19
+890.0/1024
+Iteration: 18 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.869140625
+INFO  species count: 33
+INFO  max: id=59976 score=1.0 size=28
+INFO  max: id=60342 score=1.0 size=40
+INFO  max: id=60358 score=1.0 size=44
+INFO  max: id=60468 score=1.0 size=46
+INFO  max: id=60702 score=1.0 size=46
+INFO  # chromosomes with max fitness: 5
+INFO  champ: id=59976 score=1.0 size=28
+20.0/20
+890.0/1024
+Iteration: 19 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.869140625
+INFO  species count: 34
+INFO  max: id=59976 score=1.0 size=28
+INFO  max: id=60342 score=1.0 size=40
+INFO  max: id=60358 score=1.0 size=44
+INFO  max: id=60468 score=1.0 size=46
+INFO  max: id=60702 score=1.0 size=46
+INFO  max: id=61170 score=1.0 size=39
+INFO  # chromosomes with max fitness: 6
+INFO  champ: id=59976 score=1.0 size=28
+21.0/21
+890.0/1024
+Iteration: 20 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.869140625
+INFO  species count: 33
+INFO  max: id=59976 score=1.0 size=28
+INFO  max: id=60342 score=1.0 size=40
+INFO  max: id=60358 score=1.0 size=44
+INFO  max: id=60468 score=1.0 size=46
+INFO  max: id=60702 score=1.0 size=46
+INFO  max: id=61170 score=1.0 size=39
+INFO  # chromosomes with max fitness: 6
+INFO  champ: id=59976 score=1.0 size=28
+22.0/22
+890.0/1024
+Iteration: 21 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.869140625
+INFO  species count: 36
+INFO  max: id=59976 score=1.0 size=28
+INFO  max: id=60342 score=1.0 size=40
+INFO  max: id=60358 score=1.0 size=44
+INFO  max: id=60468 score=1.0 size=46
+INFO  max: id=60702 score=1.0 size=46
+INFO  max: id=61170 score=1.0 size=39
+INFO  # chromosomes with max fitness: 6
+INFO  champ: id=59976 score=1.0 size=28
+23.0/23
+890.0/1024
+Iteration: 22 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.869140625
+INFO  species count: 33
+INFO  max: id=59976 score=1.0 size=28
+INFO  max: id=60342 score=1.0 size=40
+INFO  max: id=60358 score=1.0 size=44
+INFO  max: id=60468 score=1.0 size=46
+INFO  max: id=60702 score=1.0 size=46
+INFO  max: id=61170 score=1.0 size=39
+INFO  # chromosomes with max fitness: 6
+INFO  champ: id=59976 score=1.0 size=28
+24.0/24
+890.0/1024
+Iteration: 23 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.869140625
+INFO  species count: 37
+INFO  max: id=59976 score=1.0 size=28
+INFO  max: id=60342 score=1.0 size=40
+INFO  max: id=60358 score=1.0 size=44
+INFO  max: id=60468 score=1.0 size=46
+INFO  max: id=61170 score=1.0 size=39
+INFO  # chromosomes with max fitness: 5
+INFO  champ: id=59976 score=1.0 size=28
+25.0/25
+890.0/1024
+Iteration: 24 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.869140625
+INFO  species count: 31
+INFO  max: id=59976 score=1.0 size=28
+INFO  max: id=60342 score=1.0 size=40
+INFO  max: id=60358 score=1.0 size=44
+INFO  max: id=60468 score=1.0 size=46
+INFO  max: id=61170 score=1.0 size=39
+INFO  # chromosomes with max fitness: 5
+INFO  champ: id=59976 score=1.0 size=28
+26.0/26
+890.0/1024
+Iteration: 25 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.869140625
+INFO  species count: 34
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=60702 score=0.9273247125 size=46
+26.0/27
+INFO  species count: 39
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=62111 score=0.927559925 size=46
+26.0/27
+INFO  species count: 32
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=62111 score=0.927559925 size=46
+26.0/27
+INFO  species count: 34
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=62111 score=0.927559925 size=46
+26.0/27
+INFO  species count: 34
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=62571 score=0.92967796875 size=52
+26.0/27
+INFO  species count: 37
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=62571 score=0.92967796875 size=52
+26.0/27
+INFO  species count: 40
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=62571 score=0.92967796875 size=52
+26.0/27
+INFO  species count: 40
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=62571 score=0.92967796875 size=52
+26.0/27
+INFO  species count: 33
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=62571 score=0.92967796875 size=52
+26.0/27
+INFO  species count: 34
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=63380 score=0.94034158125 size=57
+26.0/27
+INFO  species count: 37
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=63380 score=0.94034158125 size=57
+26.0/27
+INFO  species count: 43
+INFO  # chromosomes with max fitness: 0
+INFO  champ: id=63380 score=0.94034158125 size=57
+26.0/27
+INFO  species count: 38
+INFO  max: id=63839 score=1.0 size=48
+INFO  # chromosomes with max fitness: 1
+INFO  champ: id=63839 score=1.0 size=48
+27.0/27
+884.0/1024
+Iteration: 26 of Random
+Max fitness g: 1.0
+Max Accuracy: 0.86328125
+Terminate batch job (Y/N)? 
+^C
