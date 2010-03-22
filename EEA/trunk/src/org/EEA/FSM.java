@@ -1,3 +1,4 @@
+package org.EEA;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -13,7 +14,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
-//
+// Looks like a template to create a FSM
 public class FSM<A> implements Cloneable, Serializable{
 	private static final long serialVersionUID = 42L;
 	protected Map<A,Integer>[] transitions;

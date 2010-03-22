@@ -1,6 +1,7 @@
+package org.EEA;
 import java.util.Random;
 
-
+// This most probably represents the estimation phase where FSM models are evolved. 
 public class EvoFSM {
 	private static double MUTATION = 1.1;
 	private static FSMCrossover TYPE = FSMCrossOnePt.only;

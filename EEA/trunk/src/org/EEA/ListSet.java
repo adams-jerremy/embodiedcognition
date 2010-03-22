@@ -1,3 +1,4 @@
+package org.EEA;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;

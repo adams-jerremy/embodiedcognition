@@ -1,7 +1,8 @@
+package org.EEA;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
-// We don't use this!
+//  I think the FSMCrossover type is created here.  However I am not sure we use the other classes.
 
 interface FSMCrossover{
 	<A> FSM<A> cross(FSM<A> p1, FSM<A> p2);
